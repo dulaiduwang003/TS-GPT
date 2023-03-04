@@ -7,6 +7,8 @@
 * 微信搜索 SuperBot 或 微信扫一扫
 * ![b55644d9e813d21b8411c0401f737f5c](https://user-images.githubusercontent.com/87460202/222879382-b80c419b-ddab-4f88-9bf5-e5f38c028a32.jpg)
 
+* 视频地址 https://www.bilibili.com/video/BV1kM411x7Ca/?spm_id_from=333.999.0.0&vd_source=247eccf88822f409670040957c2f29a9
+
 ### 更新日志 有问题可反馈在 B站-> https://space.bilibili.com/1876478054?spm_id_from=333.1007.0.0
 * 不在提供SpringBoot版本 有点多余 已去除
 * 新增GPT3.5 tubro文本生成能力接口 旧的模型接口已保留 可在api包下切换
