@@ -1,0 +1,186 @@
+
+ .hl-code, .hl-pre{color:#ccc;background:0 0;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;tab-size:4;-webkit-hyphens:none;hyphens:none} .hl-pre{padding:1em;margin:.5em 0;overflow:auto} .hl-pre{background:#2d2d2d} .hl-block-comment, .hl-cdata, .hl-comment, .hl-doctype, .hl-prolog{color:#999} .hl-punctuation{color:#ccc} .hl-attr-name, .hl-deleted, .hl-namespace, .hl-tag{color:#e2777a} .hl-function-name{color:#6196cc} .hl-boolean, .hl-function, .hl-number{color:#f08d49} .hl-class-name, .hl-constant, .hl-property, .hl-symbol{color:#f8c555} .hl-atrule, .hl-builtin, .hl-important, .hl-keyword, .hl-selector{color:#cc99cd} .hl-attr-value, .hl-char, .hl-regex, .hl-string, .hl-variable{color:#7ec699} .hl-entity, .hl-operator, .hl-url{color:#67cdcc} .hl-bold, .hl-important{font-weight:700} .hl-italic{font-style:italic} .hl-entity{cursor:help} .hl-inserted{color:green} .md-p {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+} .md-table, .md-blockquote {
+  margin-bottom: 16px;
+} .md-table {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+} .md-tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}.md-table .md-tr:nth-child(2n) {
+  background-color: #f6f8fa;
+} .md-th, .md-td {
+  padding: 6px 13px !important;
+  border: 1px solid #dfe2e5;
+} .md-th {
+  font-weight: 600;
+} .md-blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+} .md-code {
+  padding: 0.2em 0.4em;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+} .md-pre .md-code {
+  padding: 0;
+  font-size: 100%;
+  background: transparent;
+  border: 0;
+} .hl-pre {
+  position: relative;
+} .hl-code {
+  overflow: auto;
+  display: block;
+} .hl-language {
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  right: 8px;
+  text-align: right;
+  top: 3px;
+} .hl-pre {
+  padding-top: 1.5em;
+} .hl-pre {
+  font-size: 14px;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+} .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 1.5em;
+  font-size: 100%;
+  left: 0;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  -webkit-user-select: none;
+  user-select: none;
+} .line-numbers-rows .span {
+  display: block;
+  counter-increment: linenumber;
+} .line-numbers-rows .span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+} ._address, ._article, ._aside, ._body, ._caption, ._center, ._cite, ._footer, ._header, ._html, ._nav, ._pre, ._section {
+    display: block;
+} ._video {
+    width: 300px;
+    height: 225px;
+    display: inline-block;
+    background-color: black;
+}/* a 标签默认效果 */._a {
+  padding: 1.5px 0 1.5px 0;
+  color: #366092;
+  word-break: break-all;
+}/* a 标签点击态效果 */._hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}/* 图片默认效果 */._img {
+  max-width: 100%;
+  -webkit-touch-callout: none;
+}/* 内部样式 */._block {
+  display: block;
+}._b,
+._strong {
+  font-weight: bold;
+}._code {
+  font-family: monospace;
+}._del {
+  text-decoration: line-through;
+}._em,
+._i {
+  font-style: italic;
+}._h1 {
+  font-size: 2em;
+}._h2 {
+  font-size: 1.5em;
+}._h3 {
+  font-size: 1.17em;
+}._h5 {
+  font-size: 0.83em;
+}._h6 {
+  font-size: 0.67em;
+}._h1,
+._h2,
+._h3,
+._h4,
+._h5,
+._h6 {
+  display: block;
+  font-weight: bold;
+}._image {
+  height: 1px;
+}._ins {
+  text-decoration: underline;
+}._li {
+  display: list-item;
+}._ol {
+  list-style-type: decimal;
+}._ol,
+._ul {
+  display: block;
+  padding-left: 40px;
+  margin: 1em 0;
+}._q::before {
+  content: '"';
+}._q::after {
+  content: '"';
+}._sub {
+  font-size: smaller;
+  vertical-align: sub;
+}._sup {
+  font-size: smaller;
+  vertical-align: super;
+}._thead,
+._tbody,
+._tfoot {
+  display: table-row-group;
+}._tr {
+  display: table-row;
+}._td,
+._th {
+  display: table-cell;
+  vertical-align: middle;
+}._th {
+  font-weight: bold;
+  text-align: center;
+}._ul {
+  list-style-type: disc;
+}._ul ._ul {
+  margin: 0;
+  list-style-type: circle;
+}._ul ._ul ._ul {
+  list-style-type: square;
+}._abbr,
+._b,
+._code,
+._del,
+._em,
+._i,
+._ins,
+._label,
+._q,
+._span,
+._strong,
+._sub,
+._sup {
+  display: inline;
+}
+
+
+
+

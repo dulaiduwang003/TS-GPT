@@ -1,0 +1,39 @@
+.hover_ball_cell.data-v-6fe8f316 {
+  position: fixed;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #101428;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  padding: 17rpx;
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.08);
+}
+.hover_ball_cell .wave.data-v-6fe8f316 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.c-box.data-v-6fe8f316 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 30rpx;
+  color: white;
+  font-size: 26rpx;
+  font-weight: 600;
+  justify-content: space-between;
+}
+.c-text.data-v-6fe8f316 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.canvas.data-v-6fe8f316 {
+  width: 100rpx;
+  height: 100rpx;
+}
+

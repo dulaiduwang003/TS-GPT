@@ -1,0 +1,33 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "ChatGPT",
+        "enablePullDownRefresh": false,
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTextStyle": "white",
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#000000",
+          "backgroundColorTop": "#000000",
+          "backgroundColorBottom": "#000000"
+        }
+      }
+    },
+    {
+      "path": "pages/touch",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "ChatGPT",
+    "navigationBarBackgroundColor": "#000000",
+    "backgroundColor": "#000000"
+  },
+  "uniIdRouter": {}
+}

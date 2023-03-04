@@ -1,0 +1,36 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": false,
+    "minified": false,
+    "newFeature": true,
+    "bigPackageSizeSupport": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wx28a155bea9ea7eed",
+  "projectname": "ChatGPTAi",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+  }
+}

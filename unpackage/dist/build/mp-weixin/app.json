@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/touch"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "ChatGPT",
+    "navigationBarBackgroundColor": "#000000",
+    "backgroundColor": "#000000"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}
