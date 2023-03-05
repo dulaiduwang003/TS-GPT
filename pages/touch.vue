@@ -11,28 +11,29 @@
       </view>
     </view>
     <uni-popup ref="controlPanel" background-color="rgb(17,17,17)">
-      <view class="c-box">
-        <view class="c-text">
-          <view class="uni-title">历史回溯</view>
-          <switch :checked="checked" @change="cache" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
-        </view>
-        <view class="c-text">
-          <view class="uni-title">清除Ai会话</view>
-          <switch :checked="r_checked" @change="restart" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
-        </view>
-        <view class="c-text">
-          <view class="uni-title">返回主页</view>
-          <switch :checked="b_checked" @change="runIndex" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
-        </view>
+      <view class="c-text">
+        <view class="uni-title">历史回溯</view>
+        <switch :checked="checked" @change="cache" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
       </view>
-
+      <view class="c-text">
+        <view class="uni-title">清除Ai会话</view>
+        <switch :checked="r_checked" @change="restart" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
+      </view>
+      <view class="c-text">
+        <view class="uni-title">显示主页</view>
+        <switch :checked="b_checked" @change="runIndex" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
+      </view>
+      <view class="c-text">
+        <view class="uni-title">切换至Turbo</view>
+        <switch :checked="q_checked" @change="model" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
+      </view>
     </uni-popup>
   </view>
 </template>
 
 <script>
 import lottie from 'lottie-miniprogram';
-import {getHistoryEnable} from "@/utils/data";
+import {getHistoryEnable, getModel} from "@/utils/data";
 
 let ani = null;
 export default {
@@ -45,6 +46,7 @@ export default {
       ballAnimation: {},
       timeout: null,
       modile: {},
+      q_checked: false,
       checked: false,
       r_checked: false,
       b_checked: false
@@ -58,6 +60,7 @@ export default {
     _this.left = _this.modile.safeArea.right;
     _this.diameter = _this.modile.screenHeight / 15;
     this.checked = getHistoryEnable() === "1";
+    this.q_checked = getModel() === "1";
   },
   methods: {
     runIndex() {
@@ -79,6 +82,15 @@ export default {
       } else {
         e.detail.value = true
         uni.$emit('openHistory');
+      }
+    },
+    model(e) {
+      if (e.detail.value) {
+        uni.$emit('openModel');
+        e.detail.value = false
+      } else {
+        uni.$emit('closeModel');
+        e.detail.value = true
       }
     },
     restart() {
@@ -115,7 +127,7 @@ export default {
           }).exec();
     },
     console() {
-      this.$refs.controlPanel.open('top')
+      this.$refs.controlPanel.open('left')
       uni.vibrateShort();
 
     },
@@ -228,7 +240,7 @@ export default {
   display: flex;
   align-items: center;
   justify-items: center;
-  padding: 30rpx;
+  padding: 10rpx;
   color: white;
   font-size: 26rpx;
   font-weight: 600;
@@ -236,10 +248,13 @@ export default {
 }
 
 .c-text {
+  color: white;
   display: flex;
   align-items: center;
-  justify-items: center
-
+  justify-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+  padding: 30rpx;
 }
 
 .canvas {

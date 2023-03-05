@@ -4,6 +4,21 @@ const historyEnableKey = 'historyEnable';
 
 const paintingKey = "painting"
 
+const modelKey = "model"
+
+
+export function setModel(data) {
+    uni.setStorageSync(modelKey, data)
+}
+
+export function getModel() {
+    return uni.getStorageSync(modelKey)
+}
+
+export function removeModel() {
+    return uni.removeStorageSync(modelKey)
+}
+
 
 export function setHistory(data) {
     uni.setStorageSync(historyKey, data)
