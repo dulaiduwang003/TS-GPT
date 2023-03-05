@@ -1,7 +1,13 @@
 "use strict";
 
 export default {
-	appid: 'APPID_KEY',
+	//微信APPID
+	appid: '',
+	//不用改
 	baseUrl: 'https://api.openai.com/',
-	key:"密钥"
+	//你的Key
+	key:"",
+	//代理IP
+	proxy:""
+	
 }
