@@ -1,4 +1,6 @@
-小程序体验版暂时关闭
+小程序体验版 推荐在悬浮窗中开启 GPT-turbo 响应更快
+![gh_02bcd3e715fe_258](https://user-images.githubusercontent.com/87460202/223033440-aa656462-3e62-4bc2-ba5a-6f6d5380e9c5.jpg)
+
 
 ![222880426-f4807bce-c073-49a9-a29a-e37a50b64bb4.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd9dc8e8557d4030a394c54aaf44c02d~tplv-k3u1fbpfcp-watermark.image?)
 
