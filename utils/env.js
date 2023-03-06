@@ -4,10 +4,12 @@ export default {
 	//微信APPID
 	appid: '',
 	//不用改
-	baseUrl: 'https://api.openai.com/',
+	baseUrl: '',
 	//你的Key
 	key:"",
-	//代理IP
-	proxy:""
+
+	ip:"",
+
+	port: 7892
 	
 }

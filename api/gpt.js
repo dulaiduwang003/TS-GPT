@@ -3,7 +3,7 @@ import request from './../utils/request';
 
 export function gptTurbo(data) {
     return request({
-        url: 'v1/chat/completions',
+        url: 'gpt/local/gpt',
         method: 'POST',
         data
     })
@@ -11,7 +11,7 @@ export function gptTurbo(data) {
 
 export function gpt003(data) {
     return request({
-        url: 'v1/completions',
+        url: 'gpt/local/003',
         method: 'POST',
         data
     })

@@ -27,6 +27,10 @@
         <view class="uni-title">切换至Turbo</view>
         <switch :checked="q_checked" @change="model" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
       </view>
+      <view class="c-text">
+        <view class="uni-title">清除页面数据</view>
+        <switch :checked="c_checked" @change="closeData" color=" rgb(37, 50, 100)" style="transform:scale(0.7)"/>
+      </view>
     </uni-popup>
   </view>
 </template>
@@ -49,7 +53,8 @@ export default {
       q_checked: false,
       checked: false,
       r_checked: false,
-      b_checked: false
+      b_checked: false,
+      c_checked: false,
     }
   },
   created() {
@@ -63,6 +68,18 @@ export default {
     this.q_checked = getModel() === "1";
   },
   methods: {
+    closeData() {
+      uni.showLoading({
+        title: "清除页面数据及会话",
+        mask: true,
+      });
+      this.c_checked = true
+      setTimeout(() => {
+        uni.$emit('closePage');
+        this.c_checked = false
+        uni.hideLoading()
+      }, 600)
+    },
     runIndex() {
       uni.showLoading({
         title: "返回主页",
@@ -87,10 +104,20 @@ export default {
     model(e) {
       if (e.detail.value) {
         uni.$emit('openModel');
+        uni.showToast({
+          icon: 'none',
+          duration: 2000,
+          title: `已切换 GPT-3.5 Turbo`
+        });
         e.detail.value = false
       } else {
         uni.$emit('closeModel');
         e.detail.value = true
+        uni.showToast({
+          icon: 'none',
+          duration: 2000,
+          title: `已切换 GPT-003`
+        });
       }
     },
     restart() {

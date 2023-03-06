@@ -41,7 +41,7 @@
       </view>
       <view class="canvas-msg">提示</view>
       <view class="text-g canvas-text">
-        "可在悬浮窗切换模型如GPT-003或Turbo"
+        "可在悬浮窗切换模型如GPT-003或GPT-3.5 Turbo"
       </view>
       <view
           style="font-size: 20rpx;display: flex;justify-content: space-between;padding: 100rpx;margin-top: 30rpx">
@@ -71,8 +71,14 @@
     </view>
     <touch></touch>
     <uni-popup ref="wechat">
-      <image style="width:300rpx;height:300rpx;" src="/static/ball/wechat.jpg" :show-menu-by-longpress="true">
+      <image class="tt" src="/static/ball/wechat.jpg" :show-menu-by-longpress="true">
       </image>
+    </uni-popup>
+    <uni-popup ref="open">
+      <view class="open-box">
+        <input placeholder="填写新Key" maxlength="-1" class="input" v-model="key" style="padding: 5rpx"/>
+      </view>
+      <button class="open-btn" @click="setKey">提交</button>
     </uni-popup>
   </view>
 </template>
@@ -88,8 +94,9 @@ import {
   removeHistory,
   getHistoryEnable,
   setHistoryEnable,
-  setPainting, getModel, setModel
+  setPainting, getModel, setModel, setOpenKey, getOpenKey
 } from "@/utils/data";
+import env from "@/utils/env";
 
 export default {
   components: {
@@ -98,6 +105,7 @@ export default {
   },
   data() {
     return {
+      key: '',
       canvas: false,
       input: "",
       scrollInto: "",
@@ -122,31 +130,18 @@ export default {
   },
   onLoad() {
     const _this = this
-    this.enableCache()
-    if (getModel() !== "") {
-      this.model = getModel()
-    }
+    this.init()
     uni.$on('openHistory', function () {
       _this.openHistory()
     });
     uni.$on('openModel', function () {
       setModel("1")
       _this.changeModel("1")
-      uni.showToast({
-        icon: 'none',
-        duration: 2000,
-        title: `已切换 GPT-3.5 Turbo`
-      });
     });
     uni.$on('closeModel', function () {
-      setModel("1")
-      _this.changeModel("1")
-      uni.showToast({
-        icon: 'none',
-        duration: 2000,
-        title: `已切换 GPT-003`
-      });
-
+      setModel("0")
+      _this.changeModel("0")
+      _this.removePainting()
     });
     uni.$on('closeHistory', function () {
       _this.closeHistory()
@@ -157,8 +152,45 @@ export default {
     uni.$on('canvasVisual', function () {
       _this.canvas = false
     });
+    uni.$on('closePage', function () {
+      _this.removeData()
+    });
   },
   methods: {
+    init() {
+      //初始化Key
+      if (getOpenKey() === "") {
+        setOpenKey(env.key)
+      }
+      this.enableCache()
+      if (getModel() !== "") {
+        this.model = getModel()
+      }
+    },
+    setKey() {
+      if (this.key.length <= 0) {
+        uni.showToast({
+          icon: 'none',
+          duration: 3000,
+          title: `OpenKey不能为空`
+        });
+        return
+      }
+      setOpenKey(this.key)
+      uni.showToast({
+        icon: 'none',
+        duration: 5000,
+        title: `替换成功 如要重置 请输入 remove-key`
+      });
+      this.$refs.open.close()
+    },
+
+    removeData() {
+      this.removePainting()
+      this.data = []
+      this.chat = []
+      this.canvas = false
+    },
     console() {
       this.$refs.wechat.open('center')
       uni.vibrateShort();
@@ -177,7 +209,7 @@ export default {
     },
     copyBiliBili() {
       uni.setClipboardData({
-        data: "https://space.bilibili.com/1876478054?spm_id_from=333.337.search-card.all.click",
+        data: "https://www.bilibili.com/video/BV1kD4y1M7C4/?spm_id_from=333.999.0.0&vd_source=247eccf88822f409670040957c2f29a9",
         success: res => {
           uni.showToast({
             icon: 'none',
@@ -199,10 +231,42 @@ export default {
         //回滚之前对话以及数据
         this.chat = getPainting()
         this.data = getHistory()
+
+        this.data.push({
+          chat: [{
+            role: "user",
+            content: this.input,
+          }, {
+            role: "assistant",
+            content: "",
+          }]
+        })
+
+        for (let i = 0; i < this.data.length; i++) {
+          if (this.data[i].chat[1].content.length === 0) {
+            this.data.splice(i, 1)
+            this.chat.splice(i, 1)
+          }
+        }
       }
     },
     //发送
     sendMessage() {
+      if (this.input === "open-key") {
+        this.input=''
+        this.$refs.open.open('open')
+        return
+      }
+      if (this.input === "remove-key") {
+        setOpenKey(env.key)
+        uni.showToast({
+          icon: 'none',
+          duration: 3000,
+          title: `已重置为默认KEY~`
+        });
+        this.input=''
+        return
+      }
       if (this.succeed) {
         this.canvas = true
         this.succeed = false
@@ -210,6 +274,8 @@ export default {
         this.createModel()
         //获取渲染内容下标
         const size = this.data.length - 1
+        //设置消息定位
+        this.scrollInto = 'id-g-' + size;
         switch (this.model) {
           case "0":
             this.gpt003(size)
@@ -248,6 +314,7 @@ export default {
           content: "",
         }]
       })
+      this.input = ""
     },
     gpt003(size) {
       let parameter = ""
@@ -273,46 +340,42 @@ export default {
       }).catch((error) => {
         this.data[size].chat[1].content = error
       }).finally(() => {
-        this.input = ""
+
         this.succeed = true
-        if (getHistoryEnable() === "1") {
-          this.updateHistory(this.data)
-        }
       })
     },
     outPutFont(text, size) {
       const _this = this
       //模拟打印字效果
       let i = 0;
+
       let timer = setInterval(function () {
-        if (i <= text.length) {
-          _this.data[size].chat[1].content = text.slice(0, i++) + '_|'
-        } else {
-          _this.data[size].chat[1].content = text
-          //等待写入完毕后更新数据
-          if (getHistoryEnable() === "1") {
-            this.updateHistory(_this.data)
+        try {
+          if (i <= text.length) {
+            _this.data[size].chat[1].content = text.slice(0, i++) + '_|'
+          } else {
+            _this.data[size].chat[1].content = text
+            //等待写入完毕后更新数据
+            if (getHistoryEnable() === "1") {
+              _this.updateHistory(this.data)
+            }
+            //关闭
+            clearInterval(timer)
           }
-          //关闭
+          //模拟手机短频震动
+          uni.vibrateShort()
+        } catch (e) {
           clearInterval(timer)
         }
-        //模拟手机短频震动
-        uni.vibrateShort()
       }, 10);
-      //设置消息定位
-      this.scrollInto = 'id-g-' + size;
     },
     gptTurbo(size) {
-      const _this = this
       this.$store.dispatch('gpt/gptTurbo', this.chat).then(res => {
         const gptText = res.data['choices'][0]['message']['content'];
         this.outPutFont(gptText, size)
       }).catch((res) => {
         this.data[size].chat[1].content = res
       }).finally(() => {
-        if (getHistoryEnable() === "1") {
-          _this.updateHistory(_this.data)
-        }
         this.input = ""
         this.succeed = true
       })
@@ -339,6 +402,7 @@ export default {
         title: `重置GPT会话成功`
       });
       this.chat = []
+      removePainting()
     },
     closeHistory() {
       uni.showToast({
@@ -518,6 +582,27 @@ export default {
     transform: scale(1.0);
     background-color: #a2a2a2;
   }
+}
+
+.tt {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.open-box {
+
+  background-color: #3a3a3a;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  text-align: center
+}
+
+.open-btn {
+  margin-top: 20rpx;
+  background-color: #333233;
+  font-size: 28rpx;
+  width: 200rpx;
+  color: white
 }
 
 .chat-gpt-logo {

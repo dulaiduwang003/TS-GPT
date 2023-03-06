@@ -6,6 +6,20 @@ const paintingKey = "painting"
 
 const modelKey = "model"
 
+const openKey = "open"
+
+export function setOpenKey(data) {
+    uni.setStorageSync(openKey, data)
+}
+
+export function getOpenKey() {
+    return uni.getStorageSync(openKey)
+}
+
+export function removeOpenKey() {
+    return uni.removeStorageSync(openKey)
+}
+
 
 export function setModel(data) {
     uni.setStorageSync(modelKey, data)
@@ -13,10 +27,6 @@ export function setModel(data) {
 
 export function getModel() {
     return uni.getStorageSync(modelKey)
-}
-
-export function removeModel() {
-    return uni.removeStorageSync(modelKey)
 }
 
 
