@@ -1,9 +1,10 @@
 微信扫一扫 或者 微信搜索 superBot 即可找到
-![2051196-20230306150156317-1355991142](https://user-images.githubusercontent.com/87460202/223465436-75f4f2d6-c7f4-4a58-bbaf-1fc8d3698fae.jpg)
+
+-   ![2051196-20230306150156317-1355991142](https://user-images.githubusercontent.com/87460202/223465436-75f4f2d6-c7f4-4a58-bbaf-1fc8d3698fae.jpg)
 
 
 主页面效果图吧
-![cd9dc8e8557d4030a394c54aaf44c02d_tplv-k3u1fbpfcp-watermark](https://user-images.githubusercontent.com/87460202/223465439-e57a8955-ac17-4614-aba0-dae92328258f.png)
+-   ![cd9dc8e8557d4030a394c54aaf44c02d_tplv-k3u1fbpfcp-watermark](https://user-images.githubusercontent.com/87460202/223465439-e57a8955-ac17-4614-aba0-dae92328258f.png)
 
 
 **演示视频**-> [学会自己开发ChatGPT3.5turbo小程序( 含小程序开源代码)](https://www.bilibili.com/video/BV1kD4y1M7C4/?spm_id_from=333.999.0.0&vd_source=247eccf88822f409670040957c2f29a9)
