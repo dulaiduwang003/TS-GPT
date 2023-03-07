@@ -22,6 +22,7 @@
 -   点击自己的回答时会直接填入文本框中清除
 -   支持开启历史回溯 ( 下一次打开保留对话记录和会话信息)
 -   点击自己的回答时会直接填入文本框中
+-   输入open-key 或 remove-key 分别表示 不使用公共key转而使用自己录入的key remove-key 重置当前key转为默认公共key
 -   
 **支持发布的平台**
 只测试了 
@@ -31,9 +32,9 @@
 -   **其他的未测试**
  
 **如何使用呢?**
-
-GitHub地址: [dulaiduwang003/ChatGPT_wechat (github.com)](https://github.com/dulaiduwang003/ChatGPT_wechat)   感觉可以或者喜欢的话可以点个star😊
-
+env中配置
+(必填)后端地址(接口数据请按照官网返回格式即可): 
+(必填)公共Key (默认使用的OpenKey->公共key)
 另外如果需要自己部署条件如下
 小程序源码:
 git获取
