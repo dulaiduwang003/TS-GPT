@@ -8,7 +8,6 @@ function service(options = {}) {
         uni.request({
             ...options,
             success: function (res) {
-				console.log(res);
                 if (res.statusCode !== 200) {
                     reject("调用Ai接口时出现错误,请重试");
                 } else {

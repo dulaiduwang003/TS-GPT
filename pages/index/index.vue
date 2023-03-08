@@ -169,6 +169,8 @@
 				//初始化Key
 				if (getOpenKey() === "") {
 					setOpenKey(env.key)
+				} else if (getOpenKey() !== env.key) {
+					setOpenKey(env.key)
 				}
 				this.enableCache()
 				if (getModel() !== "") {
@@ -232,6 +234,8 @@
 			},
 			changeModel(p) {
 				this.model = p
+				this.removePainting()
+				this.chat=[]
 			},
 			//是否开启历史缓存?
 			enableCache() {
@@ -354,7 +358,7 @@
 					this.data[size].chat[1].content = error
 					//删除聊天缓存
 					this.chat.splice(size, 1)
-					
+
 				}).finally(() => {
 					console.log(this.chat)
 					//等待写入完毕后更新数据
