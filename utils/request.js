@@ -8,11 +8,14 @@ function service(options = {}) {
         uni.request({
             ...options,
             success: function (res) {
+				console.log(res);
                 if (res.statusCode !== 200) {
-                    reject("接口异常或OpenKey已失效");
+                    reject("调用Ai接口时出现错误,请重试");
                 } else {
                     if (res.data.code !== 20000) {
-                        reject("接口异常或OpenKey已失效");
+						uni.$emit('removeErrMsg');
+                        // reject(res.data.msg);
+						reject("ChatGPT接口异常 请尝试切换模型或 检查Key是否有效");
                     } else {
                         resolve(res.data);
                     }
@@ -20,7 +23,8 @@ function service(options = {}) {
                 }
             },
             fail: function (err) {
-                reject("接口异常或OpenKey已失效");
+				uni.$emit('removeErrMsg');
+                reject("调用服务端接口错误 可能服务器正在维护");
             }
         });
     });
