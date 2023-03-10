@@ -1,9 +1,5 @@
-微信扫一扫 或者 微信搜索 superBot 即可找到
 
--   ![2051196-20230306150156317-1355991142](https://user-images.githubusercontent.com/87460202/223465436-75f4f2d6-c7f4-4a58-bbaf-1fc8d3698fae.jpg)
-
-
-主页面效果图吧
+主页面效果图
 -   ![cd9dc8e8557d4030a394c54aaf44c02d_tplv-k3u1fbpfcp-watermark](https://user-images.githubusercontent.com/87460202/223465439-e57a8955-ac17-4614-aba0-dae92328258f.png)
 
 
