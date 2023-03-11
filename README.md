@@ -1,5 +1,9 @@
+新版 扫码体验
+-  ![gh_02bcd3e715fe_258](https://user-images.githubusercontent.com/87460202/224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c.jpg)
 
-主页面效果图
+
+
+主页面效果图(旧版)
 -   ![cd9dc8e8557d4030a394c54aaf44c02d_tplv-k3u1fbpfcp-watermark](https://user-images.githubusercontent.com/87460202/223465439-e57a8955-ac17-4614-aba0-dae92328258f.png)
 
 
