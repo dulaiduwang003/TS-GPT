@@ -5,6 +5,8 @@
 以下功能介绍 基于第二版本实现 效果图在最后面
 ## 快速体验
 ![gh_02bcd3e715fe_258](https://user-images.githubusercontent.com/87460202/225406059-b97b5bf4-2844-4261-a8dc-0893394a847a.jpg)
+## 视频演示地址
+https://www.bilibili.com/video/BV1kD4y1M7C4/?spm_id_from=autoNext&vd_source=247eccf88822f409670040957c2f29a9
 
 ## 主要功能
 
