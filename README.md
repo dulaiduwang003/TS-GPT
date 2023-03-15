@@ -87,4 +87,6 @@ npm install
 ![微信截图_20230316013057](https://user-images.githubusercontent.com/87460202/225406349-fb75d60a-4395-4503-9595-ed6b125327b5.png)
 ![微信截图_20230316013020](https://user-images.githubusercontent.com/87460202/225406370-6a2f01b9-bdd8-4f17-a9b0-a7515428a86a.png)
 ![微信截图_20230316013040](https://user-images.githubusercontent.com/87460202/225406573-5509048c-0aef-4a38-9d62-83659734cb1b.png)
+![微信截图_20230316022446](https://user-images.githubusercontent.com/87460202/225406864-483b9b64-dc08-4eba-bcd7-ea29d89ad44b.png)
+![微信截图_20230316022522](https://user-images.githubusercontent.com/87460202/225406987-e92a187c-6cb3-4b6f-85c1-ef5b504ee3e3.png)
 
