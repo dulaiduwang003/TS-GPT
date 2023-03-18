@@ -1,8 +1,6 @@
------------------
-
 
 **前言** 
-小程序基于主要基于uniapp SpringBoot node 实现 (ChatGPT -> 小程序源码) (ChatGPT-BOT -> ChatGPT源码(java)) (NewBing-BOT -> 必应源码(node))
+小程序基于主要基于uniapp SpringBoot node 
 
 ## 功能演示
 [哔哩哔哩视频演示](https://www.bilibili.com/video/BV19L411y7nZ/?spm_id_from=333.999.0.0)
