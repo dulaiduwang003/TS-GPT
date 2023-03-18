@@ -24,7 +24,8 @@ ps: 居然在咸鱼能看到第一版源码售卖(main) 我擦 ~
 
 以下功能介绍 基于第二版本实现 效果图在最后面
 ## 快速体验
-[gh_02bcd3e715fe_258](https://user-images.githubusercontent.com/87460202/224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c.jpg)
+![224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c](https://user-images.githubusercontent.com/87460202/226098142-18dff969-171b-4ea0-a4ce-065af8c34e79.jpg)
+
 ## 主要功能
 
 ### ChatGPT对话能力
@@ -73,7 +74,7 @@ ps: 居然在咸鱼能看到第一版源码售卖(main) 我擦 ~
 ### 项目环境(必需)
 
 * [**JDK>=17**](golang_install_guide)
-* [**CentOS>=7**](golang_install_guide)
+* [**CentOS>=8**](golang_install_guide)
 * [**NodeJS>=18**](golang_install_guide)
 * [**海外服务器**](golang_install_guide)
 * [**国内服务器(小程序平台接入需备案)**](golang_install_guide)
