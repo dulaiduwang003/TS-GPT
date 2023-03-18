@@ -96,7 +96,7 @@ npm install
 
 6.无误后maven打包上传jar 开始跑........
 
-7.newBing 工件需要额外 node环境部署 请确保你的服务器有node且版本大于 18  拉下来运行
+7.newBing 工件需要额外 node环境部署 请确保你的服务器有node且版本大于 18  拉下来 找到两个 env文件 把其中的cookie换成你的newBing cookie
 <code >
 npm install
 </code>
