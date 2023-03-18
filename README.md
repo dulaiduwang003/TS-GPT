@@ -2,10 +2,15 @@
 
 
 **前言** 
-小程序基于主要基于uniapp SpringBoot node 实现 
-#### ChatGPT -> 小程序源码
-#### ChatGPT-BOT -> ChatGPT源码(java)
-#### NewBing-BOT -> 必应源码(node)
+小程序基于主要基于uniapp SpringBoot node 实现 (ChatGPT -> 小程序源码) (ChatGPT-BOT -> ChatGPT源码(java)) (NewBing-BOT -> 必应源码(node))
+
+## 功能演示
+[哔哩哔哩视频演示](https://www.bilibili.com/video/BV19L411y7nZ/?spm_id_from=333.999.0.0)
+
+以下功能介绍 基于第二版本实现 效果图在最后面
+## 快速体验
+![224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c](https://user-images.githubusercontent.com/87460202/226098142-18dff969-171b-4ea0-a4ce-065af8c34e79.jpg)
+
 
 ## 2023-3-18
 参照第一版的影响对第二版某些功能进行了删减 至于原因你们应该都懂(完整功能源码可私信找我 至少能让我知道你在sc~)~ 
@@ -16,14 +21,6 @@
 
 ##### 额外的信息
 ps: 居然在咸鱼能看到第一版源码售卖(main) 我擦 ~
-
-
-## 功能演示
-[哔哩哔哩视频演示](https://www.bilibili.com/video/BV19L411y7nZ/?spm_id_from=333.999.0.0)
-
-以下功能介绍 基于第二版本实现 效果图在最后面
-## 快速体验
-![224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c](https://user-images.githubusercontent.com/87460202/226098142-18dff969-171b-4ea0-a4ce-065af8c34e79.jpg)
 
 ## 主要功能
 
