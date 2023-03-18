@@ -6,7 +6,7 @@ export default {
 	//后端接口
 	baseUrl: 'https://XXXXXXXXXXXXXXXX:8624/',
 	//控制台密码 6位
-	password: '031226',
+	password: '123112',
 
 
 }
