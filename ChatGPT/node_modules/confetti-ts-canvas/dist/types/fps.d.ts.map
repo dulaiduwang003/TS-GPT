@@ -1,0 +1,1 @@
+{"version":3,"file":"fps.d.ts","sourceRoot":"","sources":["../src/fps.ts"],"names":[],"mappings":"AAAA,cAAM,OAAO;IACT,OAAO,CAAC,UAAU,CAAY;IAC9B,OAAO,CAAC,KAAK,CAAW;IACxB,OAAO,CAAC,QAAQ,CAAkB;IAClC,OAAO,CAAC,OAAO,CAAW;IAC1B,OAAO,CAAC,UAAU,CAAW;IACtB,IAAI;CA+Bd;AAED,eAAe,OAAO,CAAC"}

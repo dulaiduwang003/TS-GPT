@@ -1,0 +1,38 @@
+server:
+  #服务端口
+  port: 8624
+  #域名证书
+#  ssl:
+#    key-store: classpath:anchwngb.cn.pfx
+#    key-store-password: XXXXXXX
+#    key-store-type: PKCS12
+# 日志配置
+logging:
+  level:
+    #自己的包名
+    com.cn: info
+    org.springframework: warn
+
+# 微信小程序配置
+we-chat:
+  #小程序 ID
+  appId: 'wxff05a94fe8b462e7'
+  #小程序 密钥
+  secret: '859fa1bc1607559f33dd53280ec0b44e'
+
+# Open配置
+open:
+  # Key池
+  keys:
+    - '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'
+
+  thirdPartyKey: 'Xxxxxxx'
+
+  choose: true
+
+  isStream: true
+
+  isRandom: false
+
+# bing机器人请求路径
+bingUrl: "http://172.245.154.128:3000/bing"

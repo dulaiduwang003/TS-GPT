@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "金秘书",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColorTop": "#ffffff",
+  "backgroundColorBottom": "#ffffff",
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "lyy-pass-input": "/uni_modules/lyy-pass-input/components/lyy-pass-input/lyy-pass-input",
+    "painting": "/pages/painting/painting",
+    "index": "/pages/index/index",
+    "touch": "/pages/touch/touch",
+    "mp-html": "/components/mp-html/mp-html",
+    "bing": "/pages/bing/bing"
+  }
+}
