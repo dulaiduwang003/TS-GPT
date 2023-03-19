@@ -12,10 +12,10 @@
           <view class="p4">你和ChatGPT有什么区别</view>
           <view class="p4">美国现任总统是谁</view>
           <view class="p4">古巴比利王是谁</view>
-          <view class="p3">
+<!--          <view class="p3">
             <view style="padding-bottom:5rpx;font-size:20rpx">长按悬浮球支持作者</view>
             <text>请注意不支持违法、违规等不当信息内容</text>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>
@@ -102,7 +102,7 @@ export default {
           uni.showToast({
             icon: 'none',
             duration: 3000,
-            title: `回答内容不能为 (空) (纯数字) (纯字符)~`
+            title: `提问内容不能为 (空) (纯数字) (纯字符)~`
           });
         }
 

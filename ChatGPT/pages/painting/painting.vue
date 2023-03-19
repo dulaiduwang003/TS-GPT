@@ -11,10 +11,10 @@
         <view class="p4">一个小男孩在村里跑步</view>
         <view class="p4">一只猫咪正在飞行</view>
         <view class="p4">走廊灯关上 书包放</view>
-        <view class="p3">
+<!--        <view class="p3">
           <view style="padding-bottom:5rpx;font-size:20rpx">长按悬浮球支持作者</view>
           <text>请注意不支持违法、违规等不当信息内容</text>
-        </view>
+        </view> -->
       </view>
     </view>
     <view class="content" v-show="!canvas">
@@ -154,7 +154,7 @@ export default {
         uni.showToast({
           icon: 'none',
           duration: 3000,
-          title: `回答内容不能为 (空) (纯数字) (纯字符)~`
+          title: `提问内容不能为 (空) (纯数字) (纯字符)~`
         });
       }
 

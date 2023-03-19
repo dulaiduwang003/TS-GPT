@@ -12,7 +12,7 @@
     <view :animation="animationData ? animationData : ''"
           class="input-box ">
       <view class="pro-wx">
-        <input placeholder="有问题尽管问我" maxlength="300" class="input" v-model="input" confirm-type="发送"
+       <input type ="text" placeholder="有问题尽管问我" ref="question" maxlength="300" class="input" v-model="input" confirm-type="发送"
                @confirm="send()"/>
 
         <image class="c-img" src="/static/assets/time.svg" @click="cleaner"/>
@@ -44,7 +44,7 @@
         <button open-type="contact" class="bdth">
         </button>
         <view class="ctl-word">UP正在遨游时间海...</view>
-        <view class="ctl-up">点击小汽车骚扰作者</view>
+        <!-- <view class="ctl-up">点击小汽车骚扰作者</view> -->
         <view class="ctl-box">
           <view>
             历史记录
@@ -194,6 +194,10 @@ export default {
     close: function () {
 
     },
+	setValue:function(e) {
+		console.log(e.target.value)
+
+	},
     confirm: function (e) {
       if (e.pass === env.password) {
         this.initConsole()
@@ -327,7 +331,7 @@ export default {
       await pao.fire(boom);
     },
     onLongPress: function () {
-      this.$refs.panel.open('center')
+      // this.$refs.panel.open('center')
     },
     toggleHandoff(component, succeedMsg, errorMsg) {
       if (!component.succeed) {
@@ -379,7 +383,7 @@ export default {
         });
       }
     },
-    send() {
+    send(e) {
       if (getOpen() === "") {
         this.$refs.authorization.open("center")
         return;
