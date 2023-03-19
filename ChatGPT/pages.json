@@ -4,7 +4,7 @@
     {
       "path": "pages/main/main",
       "style": {
-        "navigationBarTitleText": "SuperBot",
+        "navigationBarTitleText": "SuperGpt",
         "enablePullDownRefresh": false,
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTextStyle": "black",
@@ -39,7 +39,7 @@
   ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "SuperBot",
+    "navigationBarTitleText": "SuperGpt",
     "navigationBarBackgroundColor": "#000000",
     "backgroundColor": "#000000"
   },

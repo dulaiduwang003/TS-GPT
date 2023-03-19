@@ -9,21 +9,21 @@ server:
 
 #代理ip
 broker:
-  ip: 127.0.0.1
+  ip:
   port: 7890
 
 # 微信小程序配置
 we-chat:
   #小程序 ID
-  appId: ''
+  appId:
   #小程序 密钥
-  secret: ''
+  secret:
 
 # Open配置
 open:
   # Key池
   keys:
-    - 'sk-XXXXXXXXXXXXXXX'
+    - 'sk-XXXXXXXXXXXXxXX'
     - 'sk-XXXXXXXXXXXXxXX'
     - 'sk-XXXXXXXXXXxxxxx'
 
@@ -36,4 +36,4 @@ open:
   isRandom: false
 
 # bing机器人请求路径
-bingUrl: "http://XXXXXXXXX:3000/bing"
+bingUrl: "http://xxxxxx:3000/bing"

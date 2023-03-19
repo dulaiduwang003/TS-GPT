@@ -1,0 +1,39 @@
+server:
+  #服务端口
+  port: 8624
+  #域名证书
+#  ssl:
+#    key-store: classpath:anchwngb.cn.pfx
+#    key-store-password: XXXXXXX
+#    key-store-type: PKCS12
+
+#代理ip
+broker:
+  ip:
+  port: 7890
+
+# 微信小程序配置
+we-chat:
+  #小程序 ID
+  appId: wx2e85ff4a2e803337
+  #小程序 密钥
+  secret: 4f3ebe5b711ef648d55049b10e05ec40
+
+# Open配置
+open:
+  # Key池
+  keys:
+    - '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'
+    - 'sk-XXXXXXXXXXXXxXX'
+    - 'sk-XXXXXXXXXXxxxxx'
+
+  thirdPartyKey: 'Xxxxxxx'
+
+  choose: true
+
+  isStream: true
+
+  isRandom: false
+
+# bing机器人请求路径
+bingUrl: "http://124.223.40.27:3000/bing"

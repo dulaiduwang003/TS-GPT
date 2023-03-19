@@ -4,7 +4,6 @@
 package com.cn.app.chatgptbot.dto;
 
 import com.cn.app.chatgptbot.model.GptAlphaModel;
-import jakarta.validation.constraints.NotBlank;
 
 import lombok.Data;
 
@@ -20,7 +19,7 @@ public final class GptAlphaDto {
     /**
      * userMessages
      */
-    @NotBlank(message = "消息数据不能为空")
+ //   @NotBlank(message = "消息数据不能为空")
     private String prompt;
 
 
@@ -28,7 +27,7 @@ public final class GptAlphaDto {
     /**
      * OpenId (wechat)
      */
-    @NotBlank(message = "code错误")
+  ///  @NotBlank(message = "code错误")
     private String openId;
 
     /**

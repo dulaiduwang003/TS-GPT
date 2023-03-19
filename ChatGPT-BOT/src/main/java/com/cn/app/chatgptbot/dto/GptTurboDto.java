@@ -2,8 +2,6 @@
 package com.cn.app.chatgptbot.dto;
 
 import com.cn.app.chatgptbot.model.GptTurboModel;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -26,7 +24,7 @@ public final class GptTurboDto {
     /**
      * OpenId (WeChat)
      */
-    @NotBlank(message = "code错误")
+    //@NotBlank(message = "code错误")
     private String openId;
 
     /**
@@ -37,7 +35,7 @@ public final class GptTurboDto {
     /**
      * messageData
      */
-    @NotEmpty(message = "消息数据不能为空")
+   // @NotEmpty(message = "消息数据不能为空")
     private List<GptTurboModel.Messages> messages;
 
 

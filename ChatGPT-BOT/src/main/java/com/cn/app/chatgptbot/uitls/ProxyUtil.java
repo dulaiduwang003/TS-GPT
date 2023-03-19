@@ -43,11 +43,11 @@ public class ProxyUtil {
      * @return the proxy
      */
     public ReactorClientHttpConnector getProxy() {
-        final HttpClient httpClient = HttpClient.create()
-                .proxy(proxy -> proxy
-                        .type(ProxyProvider.Proxy.HTTP)
-                        .address(new InetSocketAddress(ip, port)));
+//        final HttpClient httpClient = HttpClient.create()
+//                .proxy(proxy -> proxy
+//                        .type(ProxyProvider.Proxy.HTTP)
+//                        .address(new InetSocketAddress(ip, port)));
 
-        return new ReactorClientHttpConnector(httpClient);
+        return new ReactorClientHttpConnector(null);
     }
 }

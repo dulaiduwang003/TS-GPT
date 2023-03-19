@@ -59,8 +59,8 @@ public final class WebClientUtil {
      */
     public static JSONObject build(ClientHttpConnector connector, final String url, final Object body, final String openKey) {
         final String block = WebClient.builder()
-                .clientConnector(connector)
-                .baseUrl("https://api.openai.com/v1/")
+               // .clientConnector(connector)
+                .baseUrl("https://service-xxxxxx.com/v1/")
                 .defaultHeader("Authorization", "Bearer " + openKey)
                 .build()
                 .post()
@@ -89,7 +89,7 @@ public final class WebClientUtil {
                                     return Mono.error(new CustomException("请求已被OpenAi拒绝受理(系统已重新分配KEY),请尝试重新发送消息"));
                                 }
                             } else {
-                                return Mono.error(new CustomException("请求过于频繁,请稍后再试"));
+                                return Mono.error(new CustomException("请求过于频繁,请稍后再试啊"));
                             }
 
                         }))

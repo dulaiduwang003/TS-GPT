@@ -1,7 +1,6 @@
 
 package com.cn.app.chatgptbot.dto;
 
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,7 +21,7 @@ public final class GptKeyDto {
     /**
      * bulkOperations Kye
      */
-    @NotEmpty(message = "key不能为空")
+    //@NotEmpty(message = "key不能为空")
     private List<String> keys;
 
 

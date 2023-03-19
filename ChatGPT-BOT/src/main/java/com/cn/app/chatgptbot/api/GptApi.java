@@ -6,10 +6,7 @@ import com.cn.app.chatgptbot.dto.GptTurboDto;
 import com.cn.app.chatgptbot.model.GptAlphaModel;
 import com.cn.app.chatgptbot.model.GptTurboModel;
 import com.cn.app.chatgptbot.msg.Result;
-import com.cn.app.chatgptbot.uitls.GptUtil;
-import com.cn.app.chatgptbot.uitls.ProxyUtil;
-import com.cn.app.chatgptbot.uitls.WeChatDetectUtils;
-import com.cn.app.chatgptbot.uitls.WebClientUtil;
+import com.cn.app.chatgptbot.uitls.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -71,8 +68,8 @@ public final class GptApi {
         // select the key randomly
         final String mainKey = GptUtil.getMainKey();
         // execute the request
-        return Result.data(WebClientUtil.build(proxyUtil.getProxy(), "chat/completions", gptTurboModel, mainKey));
-
+        return Result.data(WebClientUtil.build(null, "chat/completions", gptTurboModel, mainKey));
+       // return Result.data(HttpUtils.sendGet("chat/completions"),gptTurboModel, mainKey)
     }
 
 
@@ -91,7 +88,7 @@ public final class GptApi {
         // get  key at random
         final String mainKey = GptUtil.getMainKey();
         return Result.data(
-                WebClientUtil.build(proxyUtil.getProxy(), "images/generations", gptAlphaModel, mainKey)
+                WebClientUtil.build(null, "images/generations", gptAlphaModel, mainKey)
         );
     }
 

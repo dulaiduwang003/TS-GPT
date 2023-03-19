@@ -4,15 +4,17 @@ package com.cn.app.chatgptbot.uitls;
 import com.cn.app.chatgptbot.config.OpenConfig;
 import com.cn.app.chatgptbot.exception.CustomException;
 import com.cn.app.chatgptbot.vo.CtlDataVo;
-import jakarta.annotation.PostConstruct;
+//import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 /**
  * The type GPT util.
@@ -69,7 +71,7 @@ public final class GptUtil {
         // traverse the insert
         openConfig.getKeys().forEach(GptUtil::add);
         final Collection<String> allKey = getAllKey();
-        final List<String> list = allKey.stream().toList();
+        final List<String> list = allKey.stream().collect(Collectors.toList());
         // get the first one
         mainKey = list.get(0);
         bingUrl = temp;
@@ -109,7 +111,7 @@ public final class GptUtil {
             throw new CustomException("缓存池中已无可用的Key 请点击输入框的控制面板打开小汽车联系作者补充");
         }
         int index = new Random().nextInt(allKey.size());
-        final List<String> list = allKey.stream().toList();
+        final List<String> list = allKey.stream().collect(Collectors.toList());
         final String str = list.get(index);
         if (getMainKey().equals(openKey)) {
             mainKey = cache.get(str);

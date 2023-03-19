@@ -6,6 +6,7 @@ function service(options = {}) {
     options.header = {
         'content-type': 'application/json'
     };
+  
     return new Promise((resolve, reject) => {
         // 发送 HTTP 请求
         uni.request({
