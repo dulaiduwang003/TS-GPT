@@ -62,20 +62,9 @@ public class WeChatDetectUtils {
      * @param openId  the open id
      */
     public void filtration(final String content, final String openId) {
-        // get token
-        final String accessTokenUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appId + "&secret=" + secret;
-        final String accessTokenResponse = WebClient.create()
-                .get().uri(accessTokenUrl)
-                .retrieve()
-                .bodyToMono(String.class).block();
-
-        final JSONObject block = JSONObject.parseObject(accessTokenResponse);
-        // tencent api not err 😀
-        assert block != null;
-
-        final String accessToken = block.getString("access_token");
+        final String wechatToken = TokenManager.INSTANCE.getWechatToken(appId, secret);
         // filtration
-        final String response = WebClient.create().post().uri("https://api.weixin.qq.com/wxa/msg_sec_check?access_token=" + accessToken)
+        final String response = WebClient.create().post().uri("https://api.weixin.qq.com/wxa/msg_sec_check?access_token=" + wechatToken)
                 .body(BodyInserters.fromValue(new MsgSecCheckModel().setContent(content).setOpenid(openId)))
                 .retrieve()
                 .bodyToMono(String.class)
