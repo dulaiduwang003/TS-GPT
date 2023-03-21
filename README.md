@@ -70,23 +70,8 @@ ps: 居然在咸鱼能看到第一版源码售卖(main) 我擦 ~
 * [**如果没有海外服务器则可在国内服务器中使用VPN(Clash)**](golang_install_guide)
 
 ### 部署
+教程已砍!!!!! 最近发现人拿去 卖 挂咸鱼什么的  部署请看下面
 
-1.拉取项目后执行命令
-<code >
-npm install
-</code>
-
-2.使用Hb工具打开项目 并中找到util包下的env.js修改相应配置
-
-3.点击根目录下的 manifest.json 找到要部署平台的appid 修改为自己的appid
-
-4.HB导航栏选择运行到XXX模拟器(具体看你部署平台)
-
-5.拉取后端项目 找到application.yml 可根据自己需求调整相应配置 基本都写了注释 看着改就行
-
-6.无误后maven打包上传jar 开始跑........
-
-7.newBing 工件需要额外 node环境部署 请确保你的服务器有node且版本大于 18  拉下来 找到两个 env文件 把其中的cookie换成你的newBing cookie
 <code >
 npm install
 </code>
