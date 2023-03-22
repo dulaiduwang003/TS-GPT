@@ -60,7 +60,7 @@ public final class WebClientUtil {
     public static JSONObject build(ClientHttpConnector connector, final String url, final Object body, final String openKey) {
         final String block = WebClient.builder()
                // .clientConnector(connector)
-                .baseUrl("https://service-xxxxxx.com/v1/")
+                .baseUrl("https://api.openai.com/v1/")
                 .defaultHeader("Authorization", "Bearer " + openKey)
                 .build()
                 .post()
