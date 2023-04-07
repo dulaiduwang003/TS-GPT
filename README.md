@@ -7,7 +7,7 @@
 [哔哩哔哩视频演示](https://www.bilibili.com/video/BV19L411y7nZ/?spm_id_from=333.999.0.0)
 
 以下功能介绍 基于第二版本实现 效果图在最后面
-## 快速体验
+## 快速体验 2023/4/7 目前替换为 3.0
 ![224472294-45bd1dd2-95ee-4a50-8789-d3005e4fdd3c](https://user-images.githubusercontent.com/87460202/226098142-18dff969-171b-4ea0-a4ce-065af8c34e79.jpg)
 
 
