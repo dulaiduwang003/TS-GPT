@@ -1,4 +1,5 @@
 > 仅适用于微信小程序平台 不再支持抖音 支付宝 快手等平台
+> 安装部署教程在于 工件内部的 install.md中查看
 
 [GitHub作者主页](https://github.com/dulaiduwang003/ChatGPT_wechat)
 
