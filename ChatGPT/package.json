@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "confetti-ts-canvas": "^1.1.1",
-    "lottie-miniprogram": "^1.0.12"
-  }
-}
