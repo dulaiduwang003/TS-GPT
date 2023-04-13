@@ -1,0 +1,25 @@
+server:
+  port: 8624
+
+sa-token:
+  token-name: token
+  timeout: -1
+  activity-timeout: -1
+  is-concurrent: true
+  is-share: true
+  token-style: uuid
+  is-log: false
+
+
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  data:
+    redis:
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 1

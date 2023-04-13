@@ -1,0 +1,198 @@
+{
+  "pages": [
+    {
+      "path": "pages/dialogue/dialogue",
+      "style": {
+        "navigationBarTitleText": "Stan",
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#2B2D30",
+          "backgroundColorTop": "#2B2D30",
+          "backgroundColorBottom": "#2B2D30"
+        }
+      }
+    },
+    {
+      "path": "pages/drawing/drawing",
+      "style": {
+        "navigationBarTitleText": "Contao",
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#2B2D30",
+          "backgroundColorTop": "#2B2D30",
+          "backgroundColorBottom": "#2B2D30"
+        }
+      }
+    },
+    {
+      "path": "pages/touch/touch"
+    },
+    {
+      "path": "pages/member/member",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#2B2D30",
+          "backgroundColorTop": "#2B2D30",
+          "backgroundColorBottom": "#2B2D30"
+        }
+      }
+    },
+    {
+      "path": "pages/originality/originality",
+      "style": {
+        "navigationBarTitleText": "探索",
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#2B2D30",
+          "backgroundColorTop": "#2B2D30",
+          "backgroundColorBottom": "#2B2D30"
+        }
+      }
+    },
+    {
+      "path": "pages/panel/panel",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/translation/translation",
+      "style": {
+        "navigationBarTitleText": "文本翻译",
+        "enablePullDownRefresh": false,
+		"mp-weixin": {
+		  "navigationBarBackgroundColor": "#2B2D30",
+		  "backgroundColorTop": "#2B2D30",
+		  "backgroundColorBottom": "#2B2D30"
+		}
+      }
+    },
+    {
+      "path": "pages/generate/generate",
+      "style": {
+        "navigationBarTitleText": "生成代码",
+        "enablePullDownRefresh": false,
+		"mp-weixin": {
+		  "navigationBarBackgroundColor": "#2B2D30",
+		  "backgroundColorTop": "#2B2D30",
+		  "backgroundColorBottom": "#2B2D30"
+		}
+      }
+    },
+	{
+	  "path": "pages/server/server",
+	  "style": {
+	    "navigationBarTitleText": "控制面板",
+	    "enablePullDownRefresh": false,
+		"mp-weixin": {
+		  "navigationBarBackgroundColor": "#2B2D30",
+		  "backgroundColorTop": "#2B2D30",
+		  "backgroundColorBottom": "#2B2D30"
+		}
+	  }
+	},
+	{
+	  "path": "pages/config/config",
+	  "style": {
+	    "navigationBarTitleText": "服务器配置",
+	    "enablePullDownRefresh": false,
+		"mp-weixin": {
+		  "navigationBarBackgroundColor": "#2B2D30",
+		  "backgroundColorTop": "#2B2D30",
+		  "backgroundColorBottom": "#2B2D30"
+		}
+	  }
+	},
+    {
+      "path": "pages/bing/bing",
+      "style": {
+        "navigationBarTitleText": "新必应",
+        "enablePullDownRefresh": false,
+        "mp-weixin": {
+          "navigationBarBackgroundColor": "#2B2D30",
+          "backgroundColorTop": "#2B2D30",
+          "backgroundColorBottom": "#2B2D30"
+        }
+      }
+    },
+    {
+      "path": "pages/portrait/portrait",
+      "style": {
+        "navigationBarTitleText": "人像生成",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/erine/erine",
+      "style": {
+        "navigationBarTitleText": "文心一言",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/privacy/privacy",
+      "style": {
+        "navigationBarTitleText": "隐私政策",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/concerning/concerning",
+      "style": {
+        "navigationBarTitleText": "关于小程序",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/dialogues/dialogues",
+      "style": {
+        "navigationBarTitleText": "Ai对话",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/exchange/exchange",
+      "style": {
+        "navigationBarTitleText": "兑换码",
+        "enablePullDownRefresh": false
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "SuperBot",
+    "navigationBarBackgroundColor": "#2B2D30",
+    "backgroundColor": "#2B2D30"
+  },
+  "tabBar": {
+    "selectedColor": "#ffffff",
+    "backgroundColor": "#2B2D30",
+    "color": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/dialogue/dialogue",
+        "iconPath": "static/images/icon/businesscard_.png",
+        "selectedIconPath": "static/images/icon/businesscard.png",
+        "text": "问答"
+      },
+      {
+        "pagePath": "pages/drawing/drawing",
+        "iconPath": "static/images/icon/dynamic_.png",
+        "selectedIconPath": "static/images/icon/dynamic.png",
+        "text": "绘图"
+      },
+      {
+        "pagePath": "pages/originality/originality",
+        "iconPath": "static/images/icon/int_fill_.png",
+        "selectedIconPath": "static/images/icon/int_fill.png",
+        "text": "探索"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "iconPath": "static/images/icon/interactive_.png",
+        "selectedIconPath": "static/images/icon/interactive.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "uniIdRouter": {}
+}
