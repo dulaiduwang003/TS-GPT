@@ -8,7 +8,7 @@
 > 作者 WeChat 13248248030
 > 演示视频: https://www.bilibili.com/video/BV1iv4y1J7q2/
 > 支持作者 鼓励一下 给点更新的动力😘 
- ![图片](/static/nb.jpg)
+ ![图片](static/nb.jpg)
 
 
 
