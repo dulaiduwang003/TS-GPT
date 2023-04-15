@@ -12,8 +12,7 @@
 ![微信图片_20230414223811](https://user-images.githubusercontent.com/87460202/232085684-b17cb802-2e24-4614-ae06-aea823145310.jpg)
 
 
-> 作者的知识星球 :提供ChatGPT技术问题以及 提供SuperBot系列 的 Web(完全)版本 小程序(完全)版本 桌面(完全)版本 的后续版本以及维护更新支持 
-![微信图片_20230415164127](https://user-images.githubusercontent.com/87460202/232201724-e19822b3-8363-4dc4-b785-a0b6fda822b6.jpg)
+> 作者的付费小群 : 提供 小程序(Full)版本 Web版本 .Net版本 以及后续功能维护 版本更新等 如 4.0 版本也仅仅是发布在小群,  先行版仅修复必要bug 不会再做大更新
 
 
 [GitHub作者主页](https://github.com/dulaiduwang003/ChatGPT_wechat)
