@@ -92,6 +92,7 @@ public class ChatServiceImpl implements ChatService {
                                     .address(new InetSocketAddress(config.proxy.ip, config.proxy.port)));
                     webClient
                             .baseUrl(config.chatGpt4.baseUrl)
+                            .defaultHeader("Authorization", "Bearer " + config.chatGpt4.getKey())
                             .clientConnector(new ReactorClientHttpConnector(httpClient));
                 }
                 default -> throw new RuntimeException();
@@ -183,6 +184,7 @@ public class ChatServiceImpl implements ChatService {
                                 .address(new InetSocketAddress(serverConfig.proxy.ip, serverConfig.proxy.port)));
                 webClient
                         .baseUrl(openUrl)
+                         .defaultHeader("Authorization", "Bearer " + serverConfig.key)
                         .clientConnector(new ReactorClientHttpConnector(httpClient));
             }
             case 3 -> webClient
