@@ -5,7 +5,7 @@
 > Super003 为小程序端源码 Super003-ban为后端源码
 > 此版本为先行版 与 完全版本(full)亦有区别 可参考我的小程序
 > 作者的大群 : 提供讨论ChatGPT学术问题 以及 Java node C# 微信小程序 ChatGPT SD 等技术讨论
-> 作者的付费小群 : 提供 小程序(Full)版本 Web版本 .Net版本 以及后续功能维护 版本更新等 如 4.0 版本也仅仅是发布在小群 
+> 作者的付费小群 : 提供 小程序(Full)版本 Web版本 .Net版本
 > 作者 WeChat SeatimeIsland
 > 注明: 请替换自己风格的icon 在此md最后面有教程 
 > 4.0版本正在开发中 
