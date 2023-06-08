@@ -8,7 +8,7 @@
 > 作者的付费小群 : 提供 小程序(Full)版本 Web版本 .Net版本
 > 作者 WeChat SeatimeIsland
 > 注明: 请替换自己风格的icon 在此md最后面有教程 
-> 4.0版本正在开发中 
+> 4.0版本 Web及小程序 开发完毕 请移步另一个仓库或者查看4.0分支 
 
 > 演示视频: https://www.bilibili.com/video/BV1iv4y1J7q2/
 > 支持作者 鼓励一下 给点更新的动力😘 
