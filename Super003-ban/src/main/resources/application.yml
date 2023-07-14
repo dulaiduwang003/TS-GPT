@@ -1,0 +1,38 @@
+server:
+  port: 8624
+sa-token:
+  token-name: token
+  timeout: -1
+  activity-timeout: -1
+  is-concurrent: true
+  is-share: true
+  token-style: uuid
+  is-log: false
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  data:
+    redis:
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 1
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: del
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+  typeAliasesPackage: com.cn.app.web
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: 'null'

@@ -1,0 +1,36 @@
+server:
+  # SSL证书
+  ssl:
+    key-store: classpath:证书名称.pfx
+    key-store-password: 证书密钥
+    key-store-type: PKCS12
+
+# 微信APPID
+we-chat:
+  appId: '微信APPID'
+  secret: '微信密钥'
+
+spring:
+  data:
+    redis:
+      database: 0
+      host: docker容器ip
+      port: 6379
+      password: 'Redis密码'
+  datasource:
+    url: jdbc:mysql://docker容器ip:3306/super_bot?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&useSSL=true
+    username: root
+    password: 'MYSQL密码'
+
+# 管理员账号
+console:
+  account: '控制台账号'
+  password: '控制台密码'
+
+
+file:
+  # 缓存路径 这个表示线上环境服务器 图片存储地址 如果出现上传失败 请注意检查服务器是否拥有该文件夹的访问权限 并且在服务器创建该目录
+  path: /apps/gpt/resource/
+  # 服务器域名 这里选你的域名!!!! 记住是域名 而不是ip
+  domain: https://XXXXX:8624/
+
