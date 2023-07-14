@@ -8,7 +8,7 @@
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,
-        "nvueStyleCompiler" : "uni-app",f
+        "nvueStyleCompiler" : "uni-app",
         "compilerVersion" : 3,
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
