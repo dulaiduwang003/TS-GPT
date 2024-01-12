@@ -5,7 +5,7 @@
 
 
 基于 SpringCloud Alibaba + SpringBoot3 构建的GPT项目
-[在线演示地址](https://anchwngb.cn/)
+[在线演示地址](https://anchwngb.cn)
 
 ### 功能介绍
 
