@@ -123,7 +123,7 @@ const tableRowClassName = ({rowIndex}) => {
         </el-button>
       </div>
     </div>
-    <div class="empty-product">
+    <div class="empty-product" v-else>
       <div>
         <img :src="require('../../../assets/app/empty.svg')" alt="">
         <div>抱歉,当前未上架任何商品</div>

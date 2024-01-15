@@ -5,7 +5,7 @@ import request from "@/utils/Request";
  */
 export function reqGetUserPage(pageNum, prompt) {
     return request({
-        url: '/auth-api/user-management/get/user/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/user-management/get/user/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -14,6 +14,6 @@ export function reqGetUserPage(pageNum, prompt) {
  */
 export function reqUpdateUserInfo(data) {
     return request({
-        url: 'auth-api/user-management/update/user', method: 'POST', data
+        url: '/user-management/update/user', method: 'POST', data
     })
 }

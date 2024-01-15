@@ -6,7 +6,7 @@ import request from "@/utils/Request";
  */
 export function reqGetDrawingPromptPage(pageNum, prompt) {
     return request({
-        url: '/drawing-api/drawing-management/get/drawing-prompt/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/drawing-management/get/drawing-prompt/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -17,7 +17,7 @@ export function reqGetDrawingPromptPage(pageNum, prompt) {
  */
 export function reqUpdateDrawingPrompt(data) {
     return request({
-        url: 'drawing-api/drawing-management/update/drawing-prompt', method: 'POST', data
+        url: '/drawing-management/update/drawing-prompt', method: 'POST', data
     })
 }
 
@@ -26,7 +26,7 @@ export function reqUpdateDrawingPrompt(data) {
  */
 export function reqDeleteDrawingPrompt(data) {
     return request({
-        url: 'drawing-api/drawing-management/delete/drawing-prompt', method: 'POST', data
+        url: '/drawing-management/delete/drawing-prompt', method: 'POST', data
     })
 }
 
@@ -35,6 +35,6 @@ export function reqDeleteDrawingPrompt(data) {
  */
 export function reqAddDrawingPrompt(data) {
     return request({
-        url: 'drawing-api/drawing-management/add/drawing-prompt', method: 'POST', data
+        url: '/drawing-management/add/drawing-prompt', method: 'POST', data
     })
 }

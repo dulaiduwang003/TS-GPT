@@ -3,9 +3,9 @@ import request from "@/utils/Request";
 /**
  *   邮箱登录
  */
-export function emailLogin(data) {
+export function reqEmailLogin(data) {
     return request({
-        url: '/auth-api/auth/email/login', method: 'POST', data
+        url: '/auth/email/login', method: 'POST', data
     })
 }
 
@@ -13,17 +13,17 @@ export function emailLogin(data) {
 /**
  *   获取邮箱验证码
  */
-export function sendEmailCode(data) {
+export function reqSendEmailCode(data) {
     return request({
-        url: '/auth-api/email/send/code', method: 'POST', data
+        url: '/email/send/code', method: 'POST', data
     })
 }
 /**
  *   获取当前登录用户信息
  */
-export function getCurrentUserInfo() {
+export function reqGetCurrentUserInfo() {
     return request({
-        url: '/auth-api/user/get/userinfo', method: 'GET'
+        url: '/user/get/userinfo', method: 'GET'
     })
 }
 
@@ -31,9 +31,9 @@ export function getCurrentUserInfo() {
 /**
  * 更新头像
  */
-export function logout() {
+export function reqLogout() {
     return request({
-        url: '/auth-api/auth/sign/logout',
+        url: '/auth/sign/logout',
         method: 'POST'
     })
 }
@@ -42,9 +42,9 @@ export function logout() {
 /**
  *   更新昵称
  */
-export function uploadNickName(data) {
+export function reqUploadNickName(data) {
     return request({
-        url: '/auth-api/user/upload/nickname',
+        url: '/user/upload/nickname',
         method: 'POST',
         data
     })
@@ -54,7 +54,7 @@ export function uploadNickName(data) {
  * 更新头像
  * @returns {string}
  */
-export function uploadAvatar() {
-    return '/auth-api/user/upload/avatar'
+export function reqUploadAvatar() {
+    return '/user/upload/avatar'
 }
 

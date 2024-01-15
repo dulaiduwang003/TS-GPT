@@ -9,7 +9,7 @@ import NotLoggedInComponent from "@/components/auth/NotLoggedInComponent.vue";
 import store from "@/store";
 import WritingComponent from "@/views/setting/components/WritingComponent.vue";
 import {onMounted, ref} from "vue";
-import {getAiModelList} from "@/api/chat";
+import {reqGetAiModelList} from "@/api/chat";
 
 const modelList = ref([])
 
@@ -17,7 +17,7 @@ onMounted(async () => {
 
   if (store.getters.userInfo){
     try {
-      const {data} = await getAiModelList();
+      const {data} = await reqGetAiModelList();
       modelList.value = data
     } catch (e) {
       console.log(e)

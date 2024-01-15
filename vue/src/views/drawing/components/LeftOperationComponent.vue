@@ -4,7 +4,7 @@ import SdComponent from "@/views/drawing/components/components/SdComponent.vue";
 import DallComponent from "@/views/drawing/components/components/DallComponent.vue";
 import {defineEmits, defineExpose, ref} from "vue";
 import {ElLoading, ElNotification} from "element-plus";
-import {pushDallGenerateTask, pushSdGenerateTask} from "@/api/drawing";
+import {reqPushDallGenerateTask, reqPushSdGenerateTask} from "@/api/drawing";
 
 const emits = defineEmits(['handle-new-task']);
 
@@ -36,7 +36,7 @@ const handleDallTask = async () => {
   }
   let service = ElLoading.service({fullscreen: true, text: '正在提交任务'});
   try {
-    const {data} = await pushDallGenerateTask(formParameter);
+    const {data} = await reqPushDallGenerateTask(formParameter);
     emits("handle-new-task", {
       taskId: data,
       prompt: formParameter.prompt,
@@ -76,7 +76,7 @@ const handleSdTask = async () => {
   formParameter.denoising_strength = v / 100
   let service = ElLoading.service({fullscreen: true, text: '正在提交任务'});
   try {
-    const {data} = await pushSdGenerateTask(formParameter);
+    const {data} = await reqPushSdGenerateTask(formParameter);
     emits("handle-new-task", {
       taskId: data,
       prompt: formParameter.prompt,

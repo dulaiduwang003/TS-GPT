@@ -5,7 +5,7 @@ import request from "@/utils/Request";
  */
 export function reqGetMicroAppPage(pageNum, prompt) {
     return request({
-        url: '/chat-api/micro-management/get/micro-app/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/micro-management/get/micro-app/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -16,7 +16,7 @@ export function reqGetMicroAppPage(pageNum, prompt) {
  */
 export function reqAddMicroApp(data) {
     return request({
-        url: '/chat-api/micro-management/add/micro-app', method: 'POST', data
+        url: '/micro-management/add/micro-app', method: 'POST', data
     })
 }
 
@@ -26,7 +26,7 @@ export function reqAddMicroApp(data) {
  */
 export function reqGetMicroCategoryList() {
     return request({
-        url: '/chat-api/micro-management/get/micro-category/list', method: 'GET'
+        url: '/micro-management/get/micro-category/list', method: 'GET'
     })
 }
 
@@ -36,7 +36,7 @@ export function reqGetMicroCategoryList() {
  */
 export function reqDeleteMicroApp(data) {
     return request({
-        url: '/chat-api/micro-management/delete/micro-app', method: 'POST', data
+        url: '/micro-management/delete/micro-app', method: 'POST', data
     })
 }
 
@@ -46,7 +46,7 @@ export function reqDeleteMicroApp(data) {
  */
 export function reqUpdateMicroApp(data) {
     return request({
-        url: '/chat-api/micro-management/update/micro-app', method: 'POST', data
+        url: '/micro-management/update/micro-app', method: 'POST', data
     })
 }
 
@@ -56,7 +56,7 @@ export function reqUpdateMicroApp(data) {
  */
 export function reqAddMicroCategory(data) {
     return request({
-        url: '/chat-api/micro-management/add/micro-category', method: 'POST', data
+        url: '/micro-management/add/micro-category', method: 'POST', data
     })
 }
 
@@ -66,7 +66,7 @@ export function reqAddMicroCategory(data) {
  */
 export function reqDeleteMicroCategory(data) {
     return request({
-        url: '/chat-api/micro-management/delete/micro-category', method: 'POST', data
+        url: '/micro-management/delete/micro-category', method: 'POST', data
     })
 }
 
@@ -76,7 +76,7 @@ export function reqDeleteMicroCategory(data) {
  */
 export function reqUpdateMicroCategory(data) {
     return request({
-        url: '/chat-api/micro-management/update/micro-category', method: 'POST', data
+        url: '/micro-management/update/micro-category', method: 'POST', data
     })
 }
 
@@ -86,6 +86,6 @@ export function reqUpdateMicroCategory(data) {
  */
 export function reqGetMicroCategoryPage(pageNum, prompt) {
     return request({
-        url: '/chat-api/micro-management/get/micro-category/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/micro-management/get/micro-category/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }

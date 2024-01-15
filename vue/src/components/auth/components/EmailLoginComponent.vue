@@ -1,7 +1,7 @@
 <script setup>
 import {defineEmits, ref} from 'vue';
 import {ElNotification} from "element-plus";
-import {emailLogin, getCurrentUserInfo, sendEmailCode} from "@/api/auth";
+import {reqEmailLogin, reqGetCurrentUserInfo, reqSendEmailCode} from "@/api/auth";
 import {validateEmail} from "@/utils/Utils";
 import store from "@/store";
 
@@ -49,7 +49,7 @@ const handleGetCaptcha = async () => {
     btnCodeObj.value.text = "正在发送中";
     btnCodeObj.value.disabled = true
     //发送验证码
-    await sendEmailCode({email});
+    await reqSendEmailCode({email});
     ElNotification({
       message: "邮箱验证码已发送 注意查收", type: "success",
     });
@@ -97,11 +97,11 @@ const handleLogin = async () => {
     //按钮动画
     btnLoad.value = true
     //执行登录
-    const {data} = await emailLogin({email, code});
+    const {data} = await reqEmailLogin({email, code});
     //设置身份令牌
     localStorage.setItem("token", data);
     //获取用户信息数据
-    const res = await getCurrentUserInfo();
+    const res = await reqGetCurrentUserInfo();
     store.commit("setUserInfo", res.data);
     ElNotification({
       title: "登录成功",

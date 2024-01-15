@@ -5,7 +5,7 @@ import request from "@/utils/Request";
  */
 export function reqGetSiteData() {
     return request({
-        url: '/auth-api/ahi-management/get/site-data', method: 'GET'
+        url: '/ahi-management/get/site-data', method: 'GET'
     })
 }
 
@@ -14,7 +14,7 @@ export function reqGetSiteData() {
  */
 export function reqGetExceptionPage(pageNum) {
     return request({
-        url: '/auth-api/ahi-management/get/exception/page?pageNum=' + pageNum, method: 'GET'
+        url: '/ahi-management/get/exception/page?pageNum=' + pageNum, method: 'GET'
     })
 }
 
@@ -24,6 +24,6 @@ export function reqGetExceptionPage(pageNum) {
  */
 export function reqDeleteException(data) {
     return request({
-        url: '/auth-api/ahi-management/delete/exception', method: 'POST', data
+        url: '/ahi-management/delete/exception', method: 'POST', data
     })
 }

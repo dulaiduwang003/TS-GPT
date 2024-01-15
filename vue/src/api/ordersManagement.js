@@ -5,7 +5,7 @@ import request from "@/utils/Request";
  */
 export function reqGetOrdersPage(pageNum, prompt) {
     return request({
-        url: '/auth-api/orders-management/get/orders/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/orders-management/get/orders/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -14,7 +14,7 @@ export function reqGetOrdersPage(pageNum, prompt) {
  */
 export function reqDeleteOrders(data) {
     return request({
-        url: '/auth-api/orders-management/delete/orders', method: 'POST', data
+        url: '/orders-management/delete/orders', method: 'POST', data
     })
 }
 

@@ -8,7 +8,7 @@
 import {useStore} from "vuex";
 import LeftHandNavigationPane from "@/components/navigationBar/LeftHandNavigationPane.vue";
 import {onMounted} from "vue";
-import {getCurrentUserInfo} from "@/api/auth";
+import {reqGetCurrentUserInfo} from "@/api/auth";
 
 let store = useStore();
 store.commit("initState");
@@ -51,7 +51,7 @@ if (store.getters.userInfo) {
 onMounted(async () => {
   if (store.getters.userInfo){
     try {
-      const res = await getCurrentUserInfo();
+      const res = await reqGetCurrentUserInfo();
       store.commit("setUserInfo", res.data);
     } catch (e) {
       console.log(e)

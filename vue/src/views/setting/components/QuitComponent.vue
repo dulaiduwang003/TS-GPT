@@ -1,6 +1,6 @@
 <script setup>
 
-import {logout} from "@/api/auth";
+import {reqLogout} from "@/api/auth";
 import {ElLoading, ElNotification} from "element-plus";
 
 /**
@@ -9,7 +9,7 @@ import {ElLoading, ElNotification} from "element-plus";
 const handleLogout = async () => {
   let service = ElLoading.service({fullscreen: true, text: '正在注销'})
   try {
-    await logout();
+    await reqLogout();
     localStorage.removeItem("token");
     localStorage.removeItem("userInfo");
     location.reload();

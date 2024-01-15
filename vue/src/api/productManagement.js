@@ -5,7 +5,7 @@ import request from "@/utils/Request";
  */
 export function reqGetProductPage(pageNum, prompt) {
     return request({
-        url: '/auth-api/product-management/get/product/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/product-management/get/product/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -15,7 +15,7 @@ export function reqGetProductPage(pageNum, prompt) {
  */
 export function reqAddProduct(data) {
     return request({
-        url: '/auth-api/product-management/add/product', method: 'POST', data
+        url: '/product-management/add/product', method: 'POST', data
     })
 }
 
@@ -24,7 +24,7 @@ export function reqAddProduct(data) {
  */
 export function reqUpdateProduct(data) {
     return request({
-        url: '/auth-api/product-management/update/product', method: 'POST', data
+        url: '/product-management/update/product', method: 'POST', data
     })
 }
 
@@ -34,7 +34,7 @@ export function reqUpdateProduct(data) {
  */
 export function reqDeleteProduct(data) {
     return request({
-        url: '/auth-api/product-management/delete/product', method: 'POST', data
+        url: '/product-management/delete/product', method: 'POST', data
     })
 }
 

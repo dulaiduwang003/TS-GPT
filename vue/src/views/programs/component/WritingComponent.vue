@@ -19,7 +19,7 @@ const isAiWritingLoading = ref(false)
 //内容
 const article = ref("")
 //链接地址
-const wssAddress = ref(process.env.VUE_APP_WSS + '/chat-api/gpt/')
+const wssAddress = ref(process.env.VUE_APP_WSS + '/gpt/')
 //socket实例
 const webSocket = ref(null)
 

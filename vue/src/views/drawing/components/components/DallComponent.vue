@@ -3,7 +3,7 @@
 import {defineExpose, ref} from "vue";
 
 import {convertUrlToBase64} from "@/utils/Utils";
-import {getPromptWordsRandomly} from "@/api/drawing";
+import {reqGetPromptWordsRandomly} from "@/api/drawing";
 
 //图片大小
 const sizeList = ref([
@@ -52,8 +52,10 @@ const part = ref({
  */
 const handleClickRandomPrompt = async () => {
   try {
-    const {data} = await getPromptWordsRandomly('DALL');
-    form.value.prompt = data.prompt
+    const {data} = await reqGetPromptWordsRandomly('DALL');
+    if (data){
+      form.value.prompt = data.prompt
+    }
   } catch (e) {
     console.log(e)
   }

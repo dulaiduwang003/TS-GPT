@@ -4,9 +4,9 @@ import request from "@/utils/Request";
 /**
  *   获取模型列表
  */
-export function getAiModelList() {
+export function reqGetAiModelList() {
     return request({
-        url: '/chat-api/model/get/all', method: 'GET'
+        url: '/model/get/all', method: 'GET'
     })
 }
 
@@ -14,9 +14,9 @@ export function getAiModelList() {
 /**
  * 获取微应用
  */
-export function getMicroAppPage(pageNum) {
+export function reqGetMicroAppPage(pageNum) {
     return request({
-        url: '/chat-api/public/get/micro/page?pageNum=' + pageNum,
+        url: '/public/get/micro/page?pageNum=' + pageNum,
         method: 'GET'
 
     })
@@ -28,7 +28,7 @@ export function getMicroAppPage(pageNum) {
  */
 export function searchMicroApp(pageNum, prompt) {
     return request({
-        url: '/chat-api/public/search/micro/page?pageNum=' + pageNum + '&prompt=' + prompt,
+        url: '/public/search/micro/page?pageNum=' + pageNum + '&prompt=' + prompt,
         method: 'GET'
     })
 }
@@ -40,7 +40,7 @@ export function searchMicroApp(pageNum, prompt) {
  */
 export function useMicroApp(data) {
     return request({
-        url: '/chat-api/micro/use/template',
+        url: '/micro/use/template',
         method: 'POST',
         data
     })

@@ -4,9 +4,9 @@ import request from "@/utils/Request";
 /**
  *   发布SD任务
  */
-export function pushSdGenerateTask(data) {
+export function reqPushSdGenerateTask(data) {
     return request({
-        url: '/drawing-api/sd/push/generate',
+        url: '/sd/push/generate',
         method: 'POST',
         data
     })
@@ -15,9 +15,9 @@ export function pushSdGenerateTask(data) {
 /**
  *   发布对话(DALL2)任务
  */
-export function pushDallGenerateTask(data) {
+export function reqPushDallGenerateTask(data) {
     return request({
-        url: '/drawing-api/dall/push/generate',
+        url: '/dall/push/generate',
         method: 'POST',
         data
     })
@@ -27,9 +27,9 @@ export function pushDallGenerateTask(data) {
 /**
  *   发布对话(DALL3)任务
  */
-export function pushDialogueImageTask(data) {
+export function reqPushDialogueImageTask(data) {
     return request({
-        url: '/drawing-api/dall/dialogue/image',
+        url: '/dall/dialogue/image',
         method: 'POST',
         data
     })
@@ -38,9 +38,9 @@ export function pushDialogueImageTask(data) {
 /**
  *   获取任务执行状态
  */
-export function getDrawingTask(data) {
+export function reqGetDrawingTask(data) {
     return request({
-        url: '/drawing-api/drawing/get/task/' + data,
+        url: '/drawing/get/task/' + data,
         method: 'GET'
     })
 }
@@ -50,9 +50,9 @@ export function getDrawingTask(data) {
  * 获取SD参数
  * @returns {*}
  */
-export function getSdParam() {
+export function reqGetSdParam() {
     return request({
-        url: '/drawing-api/sd/get/param',
+        url: '/sd/get/param',
         method: 'GET'
     })
 }
@@ -60,9 +60,9 @@ export function getSdParam() {
 /**
  * 获取我的作品
  */
-export function getDrawingOpus() {
+export function reqGetDrawingOpus() {
     return request({
-        url: '/drawing-api/drawing/get/opus',
+        url: '/drawing/get/opus',
         method: 'GET'
     })
 }
@@ -71,9 +71,9 @@ export function getDrawingOpus() {
  * 删除作品
  * @returns {*}
  */
-export function deleteDrawingOpus(data) {
+export function reqDeleteDrawingOpus(data) {
     return request({
-        url: '/drawing-api/drawing/delete/opus',
+        url: '/drawing/delete/opus',
         method: 'POST',
         data
     })
@@ -83,9 +83,9 @@ export function deleteDrawingOpus(data) {
  * 随机获取提示词
  * @returns {*}
  */
-export function getPromptWordsRandomly(data) {
+export function reqGetPromptWordsRandomly(data) {
     return request({
-        url: '/drawing-api/drawing/get/prompt/' + data,
+        url: '/drawing/get/prompt/' + data,
         method: 'GET'
     })
 }

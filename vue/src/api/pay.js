@@ -3,9 +3,9 @@ import request from "@/utils/Request";
 /**
  *   获取商品
  */
-export function getAllProduct() {
+export function reqGetAllProduct() {
     return request({
-        url: '/auth-api/pay/get/all/product', method: 'GET'
+        url: '/pay/get/all/product', method: 'GET'
     })
 }
 
@@ -13,9 +13,9 @@ export function getAllProduct() {
 /**
  *   创建支付宝订单
  */
-export function createAliOrders(data) {
+export function reqCreateAliOrders(data) {
     return request({
-        url: '/auth-api/pay/created/alipay', method: 'POST', data
+        url: '/pay/created/alipay', method: 'POST', data
     })
 }
 
@@ -23,9 +23,9 @@ export function createAliOrders(data) {
 /**
  *   获取支付宝支付状态
  */
-export function getAliOrderStatus(data) {
+export function reqGetAliOrderStatus(data) {
     return request({
-        url: '/auth-api/pay/orders/status/' + data, method: 'GET'
+        url: '/pay/orders/status/' + data, method: 'GET'
     })
 }
 

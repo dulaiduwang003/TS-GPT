@@ -1,0 +1,70 @@
+spring:
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      password: ''
+  datasource:
+    username: ts_bdth
+    password: N4d3bGZ7yW5hGBBS
+    url: jdbc:mysql://127.0.0.1:3306/ts_bdth?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&useSSL=true
+  # 授权邮件
+  mail:
+    host: smtp.qq.com
+    username: 2074055628@qq.com
+    password: 'jkvryvcddf'
+
+ali-pay:
+  # 支付宝应用ID
+  appId: '支付宝应用ID'
+  # 支付宝公钥
+  alipayPublicKey: ''
+  # 私钥
+  privateKey: ''
+  # 域名  后端的 本后端的
+  domain: 'https://XXXX:9000'
+
+# 阿里云配置
+oss:
+  ali-oss:
+    endpoint: 'oss-cn-shanghai.aliyuncs.com'
+    accessKey: 'asd'
+    secretKey: 'asd'
+    bucketName: 'sea-time'
+
+config:
+  sd:
+    # sd请求连接
+    requestUrl: 'http://XXXXXXXX/sdapi/v1/'
+    # 模型列表
+    model-list:
+      - modelName: 'SHMILY_v1.0.safetensors'
+        modelText: '水彩模型'
+
+      - modelName: 'AWPortrait_v1.2.safetensors'
+        modelText: '海报杂志_AWPortrait'
+
+      - modelName: 'revAnimated_v1.2.2.safetensors'
+        modelText: '动漫_RevAnimated'
+    # 采样方法
+    sampler-list: [ 'Euler a','Euler','LMS','Heun','DPM2','DPM2 a' ]
+    # 迭代步数
+    steps:
+      min: 10
+      max: 30
+
+  # 绘图POOL
+  pool:
+    # 每个用户可创建的任务数量
+    maximum-task: 3
+    # sd可并行处理任务数( 未实装, 因为SD的实时出图仅限单任务,如果修改 请修改sd部分业务代码,本项目只做单SD )
+    sd-concurrent: 1
+    # dall可并行处理任务数
+    dall-concurrent: 5
+
+# 百度翻译 可选接入
+baidu-translation:
+  appid: '百度翻译APPID'
+  secret: '百度翻译密钥'
+
+

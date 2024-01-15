@@ -4,7 +4,7 @@
 import store from "@/store";
 import {getOssDoMain, getServiceDoMain} from "@/utils/Utils";
 import {onMounted, ref} from "vue";
-import {getCurrentUserInfo, uploadAvatar, uploadNickName} from "@/api/auth";
+import {reqGetCurrentUserInfo, reqUploadAvatar, reqUploadNickName} from "@/api/auth";
 import {ElNotification} from "element-plus";
 
 const requestHeader = ref({
@@ -13,8 +13,11 @@ const requestHeader = ref({
 
 //用户昵称
 const nickName = ref('')
+
 //临时昵称
 const nickNameTemp = ref('')
+
+const userAvatar = ref(undefined)
 
 /**
  * 更新用户信息
@@ -22,8 +25,9 @@ const nickNameTemp = ref('')
  */
 const handleRenewalUserInfo = async () => {
   //刷新用户信息
-  const res = await getCurrentUserInfo();
+  const res = await reqGetCurrentUserInfo();
   store.commit("setUserInfo", res.data);
+  flushed()
   ElNotification({
     message: '个人资料已更新', type: 'success',
   })
@@ -66,7 +70,7 @@ const handleBlurNickName = async () => {
   if (nickNameTemp.value && nickNameTemp.value !== nickName.value) {
     //更新昵称
     try {
-      await uploadNickName({nickName: nickNameTemp.value});
+      await reqUploadNickName({nickName: nickNameTemp.value});
       await handleRenewalUserInfo()
     } catch (e) {
       ElNotification({
@@ -77,13 +81,21 @@ const handleBlurNickName = async () => {
   }
 }
 
+const flushed = () => {
+  if (store.getters.userInfo) {
+    let cn = store.getters.userInfo.nickName;
+    nickName.value = cn
+    nickNameTemp.value = cn
+    if (store.getters.userInfo.avatar) {
+      userAvatar.value = getOssDoMain() + store.getters.userInfo.avatar
+    }
+
+  }
+}
+
 
 onMounted(() => {
-  if (store.getters.userInfo) {
-    let name = store.getters.userInfo.nickName;
-    nickName.value = name
-    nickNameTemp.value = name
-  }
+  flushed()
 })
 
 </script>
@@ -94,14 +106,19 @@ onMounted(() => {
     <div class="user-info-container">
       <el-upload
           :headers="requestHeader"
-          :action="getServiceDoMain()+uploadAvatar()"
+          :action="getServiceDoMain()+reqUploadAvatar()"
           :show-file-list="false"
           :on-success="handleRenewalUserInfo"
           :on-error="handleAvatarError"
           :before-upload="beforeAvatarUpload"
       >
         <img class="user-avatar"
-             :src="store.getters.userInfo.avatar?getOssDoMain()+ store.getters.userInfo.avatar:require('../../../assets/app/default-avatar.png')"
+             :src="userAvatar"
+             v-if="userAvatar"
+             alt="">
+        <img class="user-avatar"
+             v-else
+             :src="require('../../../assets/app/default-avatar.png')"
              alt="">
       </el-upload>
       <div class="user-info">

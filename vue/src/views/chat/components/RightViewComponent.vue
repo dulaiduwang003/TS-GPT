@@ -10,7 +10,7 @@ import InputComponent from "@/views/chat/components/components/InputComponent.vu
 import TopNavigationComponent from "@/views/chat/components/components/TopNavigationComponent.vue";
 import store from "@/store";
 import IndexTemplateComponent from "@/views/chat/components/components/IndexTemplateComponent.vue";
-import {pushDialogueImageTask} from "@/api/drawing";
+import {reqPushDialogueImageTask} from "@/api/drawing";
 import AuthDialogComponent from "@/components/auth/AuthDialogComponent.vue";
 import ChatTemplateComponent from "@/views/chat/components/components/ChatTemplateComponent.vue";
 import DrawingTemplateComponent from "@/views/chat/components/components/DrawingTemplateComponent.vue";
@@ -23,7 +23,7 @@ const chatTemplate = ref([])
 //用户输入内容
 const inputText = ref('')
 //链接地址
-const wssAddress = ref(process.env.VUE_APP_WSS + '/chat-api/gpt/')
+const wssAddress = ref(process.env.VUE_APP_WSS + '/gpt/')
 //socket实例
 const webSocket = ref(null)
 //内容滑块引用
@@ -94,7 +94,7 @@ const handleDialogueImage = async (input) => {
   scrollToTheBottom()
   const index = chatTemplate.value.length - 1;
   try {
-    const {data} = await pushDialogueImageTask({prompt: input});
+    const {data} = await reqPushDialogueImageTask({prompt: input});
     chatTemplate.value[index].answer = data.revisedPrompt
     chatTemplate.value[index].image = getOssDoMain() + data.url
   } catch (e) {

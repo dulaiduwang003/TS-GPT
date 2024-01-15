@@ -3,7 +3,7 @@
 import {Plus} from "@element-plus/icons-vue";
 import InfoPromptComponent from "@/components/InfoPromptComponent.vue";
 import {defineExpose, onMounted, ref} from "vue";
-import {getPromptWordsRandomly, getSdParam} from "@/api/drawing";
+import {reqGetPromptWordsRandomly, reqGetSdParam} from "@/api/drawing";
 import {ElNotification} from "element-plus";
 import store from "@/store";
 
@@ -145,8 +145,10 @@ const onChangeFileTemp = (e) => {
  */
 const handleClickRandomPrompt = async () => {
   try {
-    const {data} = await getPromptWordsRandomly('SD');
-    form.value.prompt = data.prompt
+    const {data} = await reqGetPromptWordsRandomly('SD');
+    if (data){
+      form.value.prompt = data.prompt
+    }
   } catch (e) {
     console.log(e)
   }
@@ -187,7 +189,7 @@ const acceptLocalDrawings = async (data) => {
 
 onMounted(async () => {
   if (store.getters.userInfo) {
-    const {data} = await getSdParam();
+    const {data} = await reqGetSdParam();
     modelList.value = data.modelList
     vaeList.value = data.modeList
     samplerList.value = data.samplerList

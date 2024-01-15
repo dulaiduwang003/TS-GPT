@@ -6,7 +6,7 @@ import request from "@/utils/Request";
  */
 export function reqGetGptKeyPage(pageNum, prompt) {
     return request({
-        url: '/chat-api/gpt-management/get/gpt-key/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/gpt-management/get/gpt-key/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -16,7 +16,7 @@ export function reqGetGptKeyPage(pageNum, prompt) {
  */
 export function reqGetDallKeyPage(pageNum, prompt) {
     return request({
-        url: '/drawing-api/dall-management/get/dall-key/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/dall-management/get/dall-key/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -26,7 +26,7 @@ export function reqGetDallKeyPage(pageNum, prompt) {
  */
 export function reqGetGptModelPage(pageNum, prompt) {
     return request({
-        url: '/chat-api/gpt-management/get/gpt-model/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
+        url: '/gpt-management/get/gpt-model/page?pageNum=' + pageNum + '&prompt=' + prompt, method: 'GET'
     })
 }
 
@@ -35,7 +35,7 @@ export function reqGetGptModelPage(pageNum, prompt) {
  */
 export function reqUpdateGptKey(data) {
     return request({
-        url: 'chat-api/gpt-management/update/gpt-key', method: 'POST', data
+        url: '/gpt-management/update/gpt-key', method: 'POST', data
     })
 }
 
@@ -44,7 +44,7 @@ export function reqUpdateGptKey(data) {
  */
 export function reqUpdateGptModel(data) {
     return request({
-        url: 'chat-api/gpt-management/update/gpt-model', method: 'POST', data
+        url: '/gpt-management/update/gpt-model', method: 'POST', data
     })
 }
 
@@ -53,7 +53,7 @@ export function reqUpdateGptModel(data) {
  */
 export function reqUpdateDallKey(data) {
     return request({
-        url: 'drawing-api/dall-management/update/dall-key', method: 'POST', data
+        url: '/dall-management/update/dall-key', method: 'POST', data
     })
 }
 
@@ -62,7 +62,7 @@ export function reqUpdateDallKey(data) {
  */
 export function reqAddDallKey(data) {
     return request({
-        url: 'drawing-api/dall-management/add/dall-key', method: 'POST', data
+        url: '/dall-management/add/dall-key', method: 'POST', data
     })
 }
 
@@ -71,7 +71,7 @@ export function reqAddDallKey(data) {
  */
 export function reqGetDallExtraConfig() {
     return request({
-        url: 'drawing-api/dall-management/get/dall-extra', method: 'GET'
+        url: '/dall-management/get/dall-extra', method: 'GET'
     })
 }
 
@@ -80,7 +80,7 @@ export function reqGetDallExtraConfig() {
  */
 export function reqSetDallExtraConfig(data) {
     return request({
-        url: 'drawing-api/dall-management/set/dall-extra', method: 'POST', data
+        url: '/dall-management/set/dall-extra', method: 'POST', data
     })
 }
 
@@ -90,7 +90,7 @@ export function reqSetDallExtraConfig(data) {
  */
 export function reqAddGptKey(data) {
     return request({
-        url: 'chat-api/gpt-management/add/gpt-key', method: 'POST', data
+        url: '/gpt-management/add/gpt-key', method: 'POST', data
     })
 }
 
@@ -100,7 +100,7 @@ export function reqAddGptKey(data) {
  */
 export function reqAddGptModel(data) {
     return request({
-        url: 'chat-api/gpt-management/add/gpt-model', method: 'POST', data
+        url: '/gpt-management/add/gpt-model', method: 'POST', data
     })
 }
 
@@ -110,7 +110,7 @@ export function reqAddGptModel(data) {
  */
 export function reqDeleteGptKey(data) {
     return request({
-        url: 'chat-api/gpt-management/delete/gpt-key', method: 'POST', data
+        url: '/gpt-management/delete/gpt-key', method: 'POST', data
     })
 }
 
@@ -119,7 +119,7 @@ export function reqDeleteGptKey(data) {
  */
 export function reqSetGptExtra(data) {
     return request({
-        url: 'chat-api/gpt-management/set/gpt/extra', method: 'POST', data
+        url: '/gpt-management/set/gpt/extra', method: 'POST', data
     })
 }
 
@@ -128,7 +128,7 @@ export function reqSetGptExtra(data) {
  */
 export function reqGetGptExtra() {
     return request({
-        url: 'chat-api/gpt-management/get/gpt/extra', method: 'GET'
+        url: '/gpt-management/get/gpt/extra', method: 'GET'
     })
 }
 
@@ -137,7 +137,7 @@ export function reqGetGptExtra() {
  */
 export function reqDeleteGptModel(data) {
     return request({
-        url: 'chat-api/gpt-management/delete/gpt-model', method: 'POST', data
+        url: '/gpt-management/delete/gpt-model', method: 'POST', data
     })
 }
 
@@ -147,7 +147,7 @@ export function reqDeleteGptModel(data) {
  */
 export function reqDeleteDallKey(data) {
     return request({
-        url: 'drawing-api/dall-management/delete/dall-key', method: 'POST', data
+        url: '/dall-management/delete/dall-key', method: 'POST', data
     })
 }
 
@@ -157,7 +157,7 @@ export function reqDeleteDallKey(data) {
  */
 export function reqLoadGptStructure() {
     return request({
-        url: 'chat-api/gpt-management/load/load-gpt-structure', method: 'POST'
+        url: '/gpt-management/load/load-gpt-structure', method: 'POST'
     })
 }
 
@@ -167,6 +167,6 @@ export function reqLoadGptStructure() {
  */
 export function reqLoadDallStructure() {
     return request({
-        url: 'drawing-api/dall-management/load/load-dall-structure', method: 'POST'
+        url: '/dall-management/load/load-dall-structure', method: 'POST'
     })
 }

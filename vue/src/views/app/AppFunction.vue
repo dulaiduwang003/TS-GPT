@@ -5,7 +5,7 @@ import AllContentComponent from "@/views/app/components/AllContentComponent.vue"
 import {onMounted, ref} from "vue";
 import LoadComponent from "@/components/LoadComponent.vue";
 import LoadingComponent from "@/views/app/components/LoadingComponent.vue";
-import {getMicroAppPage, searchMicroApp, useMicroApp} from "@/api/chat";
+import {reqGetMicroAppPage, searchMicroApp, useMicroApp} from "@/api/chat";
 import SearchContentComponent from "@/views/app/components/SearchContentComponent.vue";
 import EmptyComponent from "@/views/app/components/EmptyComponent.vue";
 import {ElLoading, ElNotification} from "element-plus";
@@ -87,7 +87,7 @@ const loadAllPageData = async () => {
     try {
       allPageNum.value++
       isLoading.value = true;
-      const {data} = await getMicroAppPage(allPageNum.value);
+      const {data} = await reqGetMicroAppPage(allPageNum.value);
       if (data.records && data.records.length > 0) {
         allMicroList.value.push(...data.records)
       } else {

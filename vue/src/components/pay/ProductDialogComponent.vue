@@ -1,11 +1,11 @@
 <script setup>
 import {defineEmits, defineProps, onMounted, ref, watch} from "vue";
 import CreatedOrdersComponent from "@/components/pay/components/CreatedOrdersComponent.vue";
-import {createAliOrders, getAliOrderStatus, getAllProduct} from "@/api/pay";
+import {reqCreateAliOrders, reqGetAliOrderStatus, reqGetAllProduct} from "@/api/pay";
 import AlipayComponent from "@/components/pay/components/AlipayComponent.vue";
 import {ElLoading, ElNotification} from "element-plus";
 import SucceedComponent from "@/components/pay/components/SucceedComponent.vue";
-import {getCurrentUserInfo} from "@/api/auth";
+import {reqGetCurrentUserInfo} from "@/api/auth";
 import store from "@/store";
 
 const props = defineProps({
@@ -60,7 +60,7 @@ const createdAlipay = async () => {
   }
   let service = ElLoading.service({fullscreen: true, text: '正在处理订单中'})
   try {
-    const {data} = await createAliOrders(form.value);
+    const {data} = await reqCreateAliOrders(form.value);
     handleALiOrderStatus(data.ordersId)
     orders.value = data
     active.value = 1
@@ -87,12 +87,12 @@ const handleALiOrderStatus = (ordersId) => {
     }
     try {
       payStatus.value = true
-      const {data} = await getAliOrderStatus(ordersId);
+      const {data} = await reqGetAliOrderStatus(ordersId);
       if (data) {
         ElNotification({
           title: "会员订阅", message: '支付成功', type: "success"
         });
-        const res = await getCurrentUserInfo();
+        const res = await reqGetCurrentUserInfo();
         store.commit("setUserInfo", res.data);
         active.value = 2
         payStatus.value = false
@@ -126,7 +126,7 @@ const handleSwitchActive = (index) => {
  */
 const init = async () => {
   try {
-    const {data} = await getAllProduct();
+    const {data} = await reqGetAllProduct();
     if (data && data.length > 0) {
       productList.value = data
       productList.value[0].isSelected = true

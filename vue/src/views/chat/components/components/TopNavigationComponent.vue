@@ -1,6 +1,6 @@
 <script setup>
 
-import {ref} from "vue";
+import {ref,computed} from "vue";
 
 import AuthDialogComponent from "@/components/auth/AuthDialogComponent.vue";
 import store from "@/store";
@@ -8,6 +8,10 @@ import {removalTime} from "../../../../utils/Utils";
 import ProductDialogComponent from "@/components/pay/ProductDialogComponent.vue";
 
 
+
+const isMember = computed(()=>{
+  return store.getters.userInfo.member.isMember
+})
 //登录框可见性
 const authDialogIsVisible = ref(false)
 
@@ -38,12 +42,7 @@ const handleFullScreen = () => {
       <div class="flex-wrapper-model">
         <!--控件-->
         <div class="conversation-div" v-if="store.getters.userInfo">
-          <img :src="
-          require(store.getters.userInfo.member.isMember
-          ?
-          '../../../../assets/app/member.svg'
-          :
-          '../../../../assets/app/overdue.svg')" class="member-icon" alt="">
+          <img :src="isMember ? require('../../../../assets/app/member.svg') : require('../../../../assets/app/overdue.svg')" class="member-icon" alt="">
           <div class="conversation-text">
             {{
               store.getters.userInfo.member.isMember ? removalTime(store.getters.userInfo.member.expirationTime) : '会员已过期'

@@ -1,0 +1,54 @@
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  codec:
+    max-in-memory-size: 1048574
+  servlet:
+    multipart:
+      file-size-threshold: 10240MB
+      max-request-size: 10240MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  data:
+    redis:
+      timeout: 10s
+      database: 0
+      port: 6379
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
+  mail:
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+      port: 587
+
+sa-token:
+  token-prefix: Bearer
+  token-name: Authorization
+  active-timeout: -1
+  is-concurrent: true
+  is-share: true
+  is-log: false
+  token-style: tik
+
+thread:
+  pool:
+    enable: true
+
+mybatis-plus:
+  typeAliasesPackage: com.cn.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: 'null'
+
+server:
+  port: 9000

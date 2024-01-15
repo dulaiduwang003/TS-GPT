@@ -3,7 +3,7 @@
 import {defineEmits, defineExpose, nextTick, onMounted, ref} from "vue";
 import {getCurrentZhCnDate} from "@/utils/Utils";
 import ImageProtractStatusComponent from "@/views/drawing/components/components/ImageProtractStatusComponent.vue";
-import {deleteDrawingOpus, getDrawingOpus, getDrawingTask} from "@/api/drawing";
+import {reqDeleteDrawingOpus, reqGetDrawingOpus, reqGetDrawingTask} from "@/api/drawing";
 import LocalDrawingComponent from "@/views/drawing/components/components/LocalDrawingComponent.vue";
 import {ElLoading, ElNotification} from "element-plus";
 import store from "@/store";
@@ -107,7 +107,7 @@ const handleDallPartialRepaint = (image) => {
 const handleDeleteDrawing = async (taskId) => {
   let service = ElLoading.service({fullscreen: true, text: '正在删除中'})
   try {
-    await deleteDrawingOpus({
+    await reqDeleteDrawingOpus({
       taskId: taskId
     });
     await init()
@@ -138,7 +138,7 @@ const createdDrawingListener = (taskId, index, number) => {
   let interval = setInterval(async () => {
     if (!drawingTimerList.value[number].mark) {
       drawingTimerList.value[number].mark = true;
-      let res = await getDrawingTask(taskId);
+      let res = await reqGetDrawingTask(taskId);
       if (res.data) {
         let status = res.data.status;
         drawingList.value[index].status = status
@@ -192,7 +192,7 @@ const init = async () => {
     })
   }
 
-  const {data} = await getDrawingOpus();
+  const {data} = await reqGetDrawingOpus();
   if (data) {
     drawingList.value = data
     const arr = data.filter((item) => (item.status === 'PENDING' || item.status === 'PROCESSING'));
