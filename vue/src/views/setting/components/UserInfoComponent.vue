@@ -16,6 +16,8 @@ const nickName = ref('')
 //临时昵称
 const nickNameTemp = ref('')
 
+const userAvatar = ref(undefined)
+
 /**
  * 更新用户信息
  * @returns {Promise<void>}
@@ -77,13 +79,21 @@ const handleBlurNickName = async () => {
   }
 }
 
+const flushed = () => {
+  if (store.getters.userInfo) {
+    let cn = store.getters.userInfo.nickName;
+    nickName.value = cn
+    nickNameTemp.value = cn
+    if (store.getters.userInfo.avatar) {
+      userAvatar.value = getOssDoMain() + store.getters.userInfo.avatar
+    }
+
+  }
+}
+
 
 onMounted(() => {
-  if (store.getters.userInfo) {
-    let name = store.getters.userInfo.nickName;
-    nickName.value = name
-    nickNameTemp.value = name
-  }
+  flushed()
 })
 
 </script>
@@ -101,7 +111,12 @@ onMounted(() => {
           :before-upload="beforeAvatarUpload"
       >
         <img class="user-avatar"
-             :src="store.getters.userInfo.avatar?getOssDoMain()+ store.getters.userInfo.avatar:require('../../../assets/app/default-avatar.png')"
+             :src="userAvatar"
+             v-if="userAvatar"
+             alt="">
+        <img class="user-avatar"
+             v-else
+             :src="require('../../../assets/app/default-avatar.png')"
              alt="">
       </el-upload>
       <div class="user-info">
