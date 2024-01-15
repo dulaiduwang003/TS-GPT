@@ -38,12 +38,7 @@ const handleFullScreen = () => {
       <div class="flex-wrapper-model">
         <!--控件-->
         <div class="conversation-div" v-if="store.getters.userInfo">
-          <img :src="
-          require(store.getters.userInfo.member.isMember
-          ?
-          '../../../../assets/app/member.svg'
-          :
-          '../../../../assets/app/overdue.svg')" class="member-icon" alt="">
+          <img :src="isMember ? require('../../../../assets/app/member.svg') : require('../../../../assets/app/overdue.svg')" class="member-icon" alt="">
           <div class="conversation-text">
             {{
               store.getters.userInfo.member.isMember ? removalTime(store.getters.userInfo.member.expirationTime) : '会员已过期'
